@@ -1,0 +1,97 @@
+@(loginForm: Form[_])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+
+    @scripts = {
+
+    }
+    @scriptsTop = {
+
+    }
+    @links = {
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    }
+@template_user_account_info(Messages("playauthenticate.login.title"), "login", scriptsTop, scripts, links) {
+
+    <div class="uauth col-md-offset-2 col-md-8">
+        <div class="modal-content animated fadeInLeft">
+            <div class="modal-header">
+                <div class="col-md-12">
+                <h3><a href="home">The Civil Servant</a></h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+
+        <div class="modal-content animated fadeInRight">
+            <div id="login" >
+
+                <div class="modal-body" style="overflow : hidden">
+
+
+
+
+                    <div class="container-fluid modal-body-container">
+                        <div class="col-md-8">
+                        <legend>Login</legend>
+                        @* Display proprietary login form *@
+                        @helper.form(routes.Application.doLogin) {
+
+                            @if(loginForm.hasGlobalErrors) {
+                                <p class="error">
+                                    <span class="label label-important">@loginForm.globalError.message</span>
+                                </p>
+                            }
+
+                            @inputText(
+                                loginForm("email"),
+                                'class -> "form-control",
+                                '_label -> "",
+                                '_showConstraints -> false,
+                                'placeholder -> "Email Address"
+                            )
+
+                            @inputPassword(
+                                loginForm("password"),
+                                '_showConstraints -> false,
+                                '_label -> "",
+                                'class -> "form-control",
+                                'placeholder -> "Password"
+
+
+                            )
+
+                            <div class="clearfix">
+                                <input type="submit" value="@Messages("playauthenticate.login.now")" class=" btn btn-primary" style="margin-top:15px"> <br/>
+                            </div>
+                            <br/>
+
+
+                        }
+                        </div>
+                        <div class="col-md-4">
+
+                            <legend>Sign Up With A Provider</legend>
+                            @* Display list of available providers *@
+                            @_providerPartial(skipCurrent = false)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-content animated fadeInRight" >
+            <div class="modal-header" >
+                <h5><a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword ( $ ( '#email' ).val ( ) || null ).absoluteURL ( ) ;">@Messages("playauthenticate.login.forgot.password")</a></h5>
+            </div>
+        </div>
+
+    </div>
+
+}

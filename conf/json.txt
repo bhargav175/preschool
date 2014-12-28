@@ -1,0 +1,18 @@
+Subject
+{
+Subject:{
+name:"subjectname",
+slug:"subjectslug",
+description:"Lorem ipsum ildor"
+}
+}
+
+Chapter
+{
+Chapter:{
+name:"chaptername",
+slug:"chapterslug",
+subjectslug:"subjectslug",
+description:"Lorem ipsum ildor"
+}
+}

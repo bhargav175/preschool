@@ -1,0 +1,183 @@
+@(title: String, nav: String = "",scriptsTop:Html,scripts:Html,links:Html)(content: Html)
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+<!DOCTYPE html>
+<html lang="@lang().code()">
+    <head>
+        <title>@title</title>
+
+            <!-- Le meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Play Authenticate - an authentication module for the Play! Framework 2.0">
+        <meta name="author" content="The Play Authenticate Team">
+
+
+
+
+            <!-- Le styles -->
+
+
+        <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/animate.min.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/apprise-v2.css")" rel="stylesheet">
+
+
+        <script src="@routes.Application.jsRoutes" defer="defer"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+        <script src="@routes.Assets.at("js/bootstrap.js")"></script>
+        @links
+        @scriptsTop
+
+
+            <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    </head>
+
+    <body>
+
+
+            <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Gyanpub</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+
+                        @subjectPresentOr(){
+                            @defining(Application.getLocalUser(session())) { user =>
+
+
+
+                            }
+
+
+                        }{
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"  aria-expanded="true">
+                                    <i class="fa fa-angle-down fa-fw"></i>
+                                </a>
+                                <ul class="dropdown-menu ">
+                                    <li><a href="/signup">Signup</a></li>
+                                    <li><a href="/login">Login</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        @subjectPresentOr(){
+                            @defining(Application.getLocalUser(session())) { user =>
+                                <li class="dropdown" >
+
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"> More <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="@routes.Application.settings()"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li class="dropdown-header">More</li>
+
+                                        <li class="divider"></li>
+                                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown" id="notificationUpdatesHolder" >
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="notificationLink">
+                                        <span class="fa-stack">
+                                            <i class="fa fa-bell-o fa-stack"  id="notificationIcon"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user notification-list">
+
+                                        <li class="seeAllUpdates">
+                                            <a href="@controllers.Information.routes.Notification.updatesPage()">See All Updates</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            }
+                        }{
+
+                        }
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+
+
+        <div class="container">
+
+
+
+            <div class="col-md-3">
+             @subjectPresentOr() {
+                 @defining(Application.getLocalUser(session())) { user =>
+
+
+
+                     <div class="list-group">
+
+                         <a href="/home" class="list-group-item active"><i class="fa fa-dashboard fa-fw"></i>
+                             Dashboard</a>
+
+                         <a href="@routes.Application.profile(user.name)" class="list-group-item"><i class="fa fa-paperclip fa-fw"></i>
+                             Profile</a>
+
+                         <a href="/discover" class="list-group-item"><i class="fa fa-eye fa-fw"></i> Discover</a>
+
+                         <a href="/tags" class="list-group-item"><i class="fa fa-tag fa-fw"></i> Tags</a>
+                         <a href="@controllers.Forum.routes.Forum.ForumPage()" class="list-group-item"><i class="fa fa-group fa-fw"></i> Forum</a>
+
+                         <a href="/shortnote/new" class="list-group-item"><i class="fa fa-pencil fa-fw"></i>ShortNote</a>
+
+                     </div>
+                 }
+             }{
+
+                }
+
+            </div>
+            <div class="col-md-9">
+            @content
+            </div>
+
+
+        </div>
+
+
+
+
+            <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+
+
+        @scripts
+        <script src="@routes.Assets.at("js/sbadmin/plugins/metisMenu/jquery.metisMenu.js")"></script>
+
+            <!-- Page-Level Plugin Scripts - Dashboard -->
+
+        <script src="@routes.Assets.at("js/apprise-v2.js")"></script>
+
+        @subjectPresentOr(){
+            <script src="@routes.Assets.at("js/notification.js")"></script>
+        }{
+
+        }
+
+
+    </body>
+</html>

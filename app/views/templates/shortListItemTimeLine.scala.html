@@ -1,0 +1,51 @@
+@(shortNoteList:List[models.content.ShortNote])
+
+@if(shortNoteList!=null){
+    <ul class="shortListTimeline pull-up">
+    @for((shortNote,index) <-shortNoteList.zipWithIndex){
+
+
+
+        <li class="listCard shortNote"  id="shortNote@shortNote.id" style="overflow:hidden">
+            <span class="timelineIcon"></span>
+            <div class="listCardFeaturedImage">
+            @if(shortNote.featuredImage!=null){
+                <img src="/assets@shortNote.featuredImage.path.substring(6)">
+            }else{
+                <img src="@routes.Assets.at("img/landingpage/banner-bg.jpg")">
+                }
+            </div>
+
+            <div class="listCardBody">
+                <div >
+                    <h1><a href="@routes.Application.getShortNote(shortNote.slug)">@shortNote.title</a></h1>
+
+                    <p class="">
+                    @if(shortNote.tags!=null){
+                        <i class="fa fa-tags"></i>
+                        @for(tag<-shortNote.tags){
+                            <a href="@routes.Application.tag(tag.slug)"> <label class="label label-default">@tag.slug</label></a>
+                        }
+                    }
+                    </p>
+
+                    @if(controllers.Application.getLocalUser(session())!=null){
+                        @if(shortNote.user.equals(controllers.Application.getLocalUser(session()))){
+                            <hr>
+                            <p> <a class="btn btn-info" href="@routes.Application.editShortnote(shortNote.slug)">Edit</a></p>
+                        }
+                    }
+                    <p>@shortNote.score</p>
+                </div>
+            </div>
+
+
+
+
+
+        </li>
+
+
+    }
+</ul>
+}

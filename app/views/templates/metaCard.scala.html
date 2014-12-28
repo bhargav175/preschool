@@ -1,0 +1,27 @@
+@(contentType:String,header:String,headerHover:Html,image:models.content.Image)
+
+@import be.objectify.deadbolt.java.views.html._
+
+<div class="metaCard">
+    <div class="metaCardHeader">
+    <h2 class="page-header">@contentType: <span class="capitalize">@header</span></h2>
+    </div>
+    <div class="metaCardBody">
+
+       <a href="#" class="thumbnail">
+        @if(image==null){
+            <img src="@routes.Assets.at("img/landingpage/banner-bg.jpg")">
+
+        }else{
+            <img src="/assets@image.path.substring(6)">
+            }
+
+        </a>
+
+
+    </div>
+    <div class="metaCardFooter">
+    @headerHover
+    </div>
+
+</div>

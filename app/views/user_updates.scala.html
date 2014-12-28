@@ -1,0 +1,56 @@
+@(localUser:User,notification_infos:List[models.Information.Notification_Info])
+
+@import org.joda.time.format.ISODateTimeFormat
+@import views.html.templates._
+
+    @scripts = {
+        <script src='@routes.Assets.at("js/angular.js")'></script>
+        <script src='@routes.Assets.at("js/angular-sanitize.min.js")'></script>
+        <script src='@routes.Assets.at("js/angular-route.min.js")'></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+
+        <script src='@routes.Assets.at("js/restangular.js")'></script>
+        <script src='@routes.Assets.at("js/ui-bootstrap-tpls-0.11.0.min.js")'></script>
+        <script src='@routes.Assets.at("js/angular-file-upload.min.js")'></script>
+        <script src='@routes.Assets.at("js/angularapps/user_profile.js")'></script>
+
+
+    }
+    @scriptsTop = {
+        <script src='@routes.Assets.at("js/jquery.hotkeys.js")'></script>
+        <script src='@routes.Assets.at("js/google-prettify/prettify.js")'></script>
+        <script src='@routes.Assets.at("js/bootstrap-wysiwyg.js")'></script>
+
+
+    }
+    @links = {
+        <link rel="apple-touch-icon" href="//mindmup.s3.amazonaws.com/lib/img/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="http://mindmup.s3.amazonaws.com/lib/img/favicon.ico" >
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href='@routes.Assets.at("css/box.css")'>
+
+        <link rel="stylesheet" href='@routes.Assets.at("css/bootstrap-wysiwyg.css")'>
+        <link rel="stylesheet" href='@routes.Assets.at("css/google-prettify/prettify.css")'>
+    }
+@template_user_dashboard_semantic_new(Messages("playauthenticate.navigation.home"), "profile", scriptsTop, scripts, links) {
+    <div class="" style="height:40px">
+
+    </div>
+    <ul class="list-group">
+    @for(notification_info<-notification_infos){
+        @if(notification_info.notification_object.objectType.equals("shortNote")){
+            <li class="list-group-item">@notification_info.acted.name @notification_info.verb <a href="@routes.Application.getShortNote(notification_info.notification_object.identifier)">@notification_info.notification_object.objectType</a> <span class="label label-primary">@notification_info.isSeen</span></li>
+        }
+        @if((notification_info.notification_object.objectType.equals("forumThread"))){
+            <li class="list-group-item">@notification_info.acted.name @notification_info.verb <a href="@models.Forum.ForumThread.getForumBySlug(notification_info.notification_object.identifier)">@notification_info.notification_object.objectType</a> <span class="label label-primary">@notification_info.isSeen</span></li>
+
+        }
+        @if((notification_info.notification_object.objectType.equals("forumAnswer"))){
+            <li class="list-group-item">@notification_info.acted.name @notification_info.verb <a href="@models.Forum.ForumAnswer.getForumAnswerBySlug(notification_info.notification_object.identifier)">@notification_info.notification_object.objectType</a> <span class="label label-primary">@notification_info.isSeen</span></li>
+
+        }
+
+    }
+    </ul>
+
+}

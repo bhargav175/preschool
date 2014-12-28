@@ -1,0 +1,152 @@
+@(title: String, nav: String = "",scriptsTop:Html,scripts:Html,links:Html)(content: Html)
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+<!DOCTYPE html>
+<html lang="@lang().code()">
+    <head>
+        <title>@title</title>
+
+            <!-- Le meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Play Authenticate - an authentication module for the Play! Framework 2.0">
+        <meta name="author" content="The Play Authenticate Team">
+
+
+
+
+            <!-- Le styles -->
+        <link href="@routes.Assets.at("stylesheets/main.min.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/animate.min.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/temp.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/sbadmin/sb-admin.css")" rel="stylesheet">
+
+            <!-- Le scripts -->
+
+        <script src="@routes.Application.jsRoutes" defer="defer"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+        <script src="@routes.Assets.at("js/bootstrap.js")"></script>
+        @links
+        @scriptsTop
+
+
+            <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/home">Edify India</a>
+                </div>
+                    <!-- /.navbar-header -->
+                @subjectPresentOr(){
+                    @defining(Application.getLocalUser(session())) { user =>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/home"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/profile/@user.name"><i class="fa fa-table fa-fw"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="/discover"><i class="fa fa-table fa-fw"></i> Discover</a>
+                    </li>
+                    <li>
+                        <a href="/tags"><i class="fa fa-table fa-fw"></i> Tags</a>
+                    </li>
+                    <li>
+                        <a href="/shortnote/new">ShortNote</a>
+                    </li>
+
+
+                </ul>
+
+                    }
+                }{
+
+                }
+
+                <ul class="nav navbar-top-links navbar-right">
+
+                @subjectPresentOr() {
+                    @defining(Application.getLocalUser(session())) { user =>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="@routes.Application.profile(user.name)"><i class="fa fa-user fa-fw"></i> <span style="text-transform: capitalize">@user.name</span>'s Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                            <!-- /.dropdown-user -->
+                    </li>
+                        <!-- /.dropdown -->
+                    }
+                }{
+                    <li><a href="/signup">Signup</a></li>
+                    <li><a href="/login">Login</a></li>
+                }
+                </ul>
+                    <!-- /.navbar-top-links -->
+
+                    <!-- /.navbar-static-side -->
+            </nav>
+
+            <div class=" content-wrapper">
+
+                    <!-- /.row -->
+
+                    @content
+
+
+                    <!-- /.row -->
+            </div>
+                <!-- /#page-wrapper -->
+
+        </div>
+            <!-- /#wrapper -->
+
+            <!-- Core Scripts - Include with every page -->
+
+
+            <!-- Page-Level Plugin Scripts - Dashboard -->
+
+            <!-- SB Admin Scripts - Include with every page -->
+        <script src="@routes.Assets.at("js/sbadmin/sb-admin.js")"></script>
+
+            <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+
+
+        @scripts
+
+        <script src="@routes.Assets.at("js/sbadmin/plugins/metisMenu/jquery.metisMenu.js")"></script>
+
+            <!-- Page-Level Plugin Scripts - Dashboard -->
+        <script src="@routes.Assets.at("js/sbadmin/plugins/morris/raphael-2.1.0.min.js")"></script>
+        <script src="@routes.Assets.at("js/sbadmin/plugins/morris/morris.js")"></script>
+
+
+    </body>
+</html>

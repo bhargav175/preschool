@@ -1,0 +1,38 @@
+@import helper._
+@import helper.twitterBootstrap._
+
+@scripts = {
+
+}
+@scriptsTop = {
+
+}
+@links = {
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+}
+@template_user_account_info(Messages("playauthenticate.login.title"), "login", scriptsTop, scripts, links) {
+    <div class="uauth col-md-offset-2 col-md-8">
+        <div class="modal-content animated fadeInLeft">
+            <div class="modal-header">
+                <div class="col-md-12">
+                    <h3><a href="home">The Civil Servant</a></h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="modal-content animated fadeInLeft">
+            <div class="modal-body" style="overflow : hidden">
+                <div class="container-fluid modal-body-container">
+
+	<h1>@Messages("playauthenticate.verify.user_account.title")</h1>
+	<p>
+	@Messages("playauthenticate.verify.user_account.before") <a href="@routes.Account.verifyEmail">@Messages("playauthenticate.verify.user_account.first")</a>.<br/>
+	</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

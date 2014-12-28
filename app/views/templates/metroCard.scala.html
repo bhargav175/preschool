@@ -1,0 +1,19 @@
+
+@(header:String,headerHover:Html,image:models.content.Image)
+
+
+<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        @if(image==null){
+            <img src="@routes.Assets.at("img/landingpage/banner-bg.jpg")">
+
+        }else{
+            <img src="/assets@image.path.substring(6)">
+        }
+
+        <div class="caption">
+            <h3>@header</h3>
+            <p>@headerHover</p>
+        </div>
+    </div>
+</div>

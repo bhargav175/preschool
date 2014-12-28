@@ -4,7 +4,7 @@ import sbt._
 
 object Build extends sbt.Build {
 
-    val appName         = "gyanpub"
+    val appName         = "preschool"
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(

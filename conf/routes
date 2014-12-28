@@ -1,0 +1,159 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                                      controllers.Application.index
+GET         /home                                  controllers.Application.home
+GET         /assets/javascript/routes.js           controllers.Application.jsRoutes
+
+GET         /account                               controllers.Application.user_account
+GET         /profile/:username                     controllers.Application.profile(username:String)
+
+GET         /login                                 controllers.Application.login
+POST        /login                                 controllers.Application.doLogin
+
+GET         /logout                                com.feth.play.module.pa.controllers.Authenticate.logout
+GET         /authenticate/:provider                com.feth.play.module.pa.controllers.Authenticate.authenticate(provider: String)
+
+GET         /signup                                controllers.Application.signup
+POST        /signup                                controllers.Application.doSignup
+
+GET         /accounts/unverified                   controllers.Signup.unverified
+GET         /authenticate/:provider/denied         controllers.Signup.oAuthDenied(provider: String)
+
+GET         /accounts/verify/:token                controllers.Signup.verify(token: String)
+GET         /accounts/exists                       controllers.Signup.exists
+
+GET         /accounts/password/reset/:token        controllers.Signup.resetPassword(token: String)
+POST        /accounts/password/reset               controllers.Signup.doResetPassword
+
+GET         /accounts/password/change              controllers.Account.changePassword
+POST        /accounts/password/change              controllers.Account.doChangePassword
+
+GET         /accounts/verify                       controllers.Account.verifyEmail
+
+GET         /accounts/add                          controllers.Account.link
+
+GET         /accounts/link                         controllers.Account.askLink
+POST        /accounts/link                         controllers.Account.doLink
+
+GET         /accounts/merge                        controllers.Account.askMerge
+POST        /accounts/merge                        controllers.Account.doMerge
+
+GET         /login/password/forgot                 controllers.Signup.forgotPassword(email: String ?= "")
+POST        /login/password/forgot                 controllers.Signup.doForgotPassword
+GET         /signupadmin                           controllers.Application.signupAdmin
+
+GET         /api/users/all                         controllers.UserController.getAllUsers
+GET         /api/users                             controllers.UserController.getUsers
+GET         /api/activity/user                     controllers.Application.getUserActivity
+GET         /api/notification/user                 controllers.Information.Notification.getNotification
+POST        /api/notification/see                  controllers.Information.Notification.seeNotification
+GET         /api/notification/set                  controllers.Information.Notification.setNotification
+GET         /updates                               controllers.Information.Notification.updatesPage
+POST        /api/user/follow                       controllers.Application.followUser
+POST        /api/user/unfollow                     controllers.Application.unfollowUser
+GET         /api/user/isfollowing                  controllers.Application.isfollowing(username:String)
+POST        /api/user/tag/follow                   controllers.Application.followTag
+POST        /api/user/tag/unfollow                 controllers.Application.unfollowTag
+GET         /api/user/tag/isfollowing              controllers.Application.isfollowingTag(username:String,tagslug:String)
+GET         /reader                                controllers.Application.reader
+GET         /shortnote/new                         controllers.Application.newShortNote
+GET         /settings                              controllers.Application.settings
+
+POST        /shortnote/add                         controllers.content.ShortNote.shortNote
+GET         /api/shortnote/recent                  controllers.Application.recentTenShortNotes
+GET         /api/shortnote/list                    controllers.content.ShortNote.returnShortNotes
+GET         /api/shortnote/list/user               controllers.content.ShortNote.returnShortNotesByUser
+GET         /shortnote                             controllers.content.ShortNote.infoShortNote(slug:String)
+GET         /shortnote/mod                         controllers.Application.moderateShortNote(slug:String)
+GET         /shortnote/edit                        controllers.Application.editShortnote(slug:String)
+POST        /shortnote/doedit                      controllers.content.ShortNote.doedit_shortnote
+GET         /api/shortnote/edithistory             controllers.content.ShortNote.getEditHistory(id:Long)
+GET         /api/shortnote/tag                     controllers.content.ShortNote.getPostsByTag(slug:String)
+GET         /api/shortnote/chapter                 controllers.content.ShortNote.getPostsByChapter(slug:String)
+GET         /api/shortnote/feed                    controllers.content.ShortNote.feedShortNode
+POST        /api/shortnote/upvote                  controllers.content.ShortNote.doUpvote
+POST        /api/shortnote/downvote                controllers.content.ShortNote.doDownvote
+POST        /shortnote/flag                        controllers.content.ShortNote.flag
+POST        /shortnote/report                      controllers.content.ShortNote.report
+POST        /file/upload                           controllers.Application.upload
+GET         /api/image                             controllers.Application.getImage(id:Long)
+GET         /api/user/images                       controllers.Application.getCurrentUserImagesAsJson
+POST        /api/user/image/update                 controllers.Application.updateImage
+
+GET         /note                                  controllers.Application.getShortNote(slug:String)
+GET         /404                                   controllers.Application.notfound
+
+#Page
+GET         /discover                              controllers.Application.discover
+GET         /discover/subject                      controllers.Application.subject(slug:String)
+GET         /discover/chapter                      controllers.Application.chapter(slug:String)
+GET         /discover/concept                      controllers.Application.concept(slug:String)
+GET         /discover/tag                          controllers.Application.tag(slug:String)
+
+
+GET         /tags                                  controllers.Application.tags
+GET         /subject/new                           controllers.Admin.AdminApplication.newSubject
+
+GET         /api/subject/list                      controllers.content.Subject.returnSubjects
+GET         /subject/edit                          controllers.Admin.AdminApplication.editSubject(slug:String)
+GET         /subject                               controllers.Admin.AdminApplication.infoSub(slug:String)
+GET         /branch/:subject                       controllers.content.Subject.returnSubject(subject:String)
+POST        /subject/add                           controllers.Admin.AdminApplication.add_subject
+POST        /subject/doedit                        controllers.Admin.AdminApplication.doedit_subject
+
+
+
+GET         /chapter                               controllers.Admin.AdminApplication.infoChap(slug:String)
+GET         /chapter/edit                          controllers.Admin.AdminApplication.editChapter(slug:String)
+GET         /api/chapter/list                      controllers.content.Chapter.returnChapters
+
+GET         /chapter/new                           controllers.Admin.AdminApplication.newChapter
+POST        /chapter/add                           controllers.Admin.AdminApplication.add_chapter
+GET         /chapter/list/subject                  controllers.Admin.AdminApplication.getChaptersFromSubjectAsList(slug:String)
+POST        /chapter/list/subject                  controllers.Admin.AdminApplication.getCategoriesFromSubject
+POST        /chapter/doedit                        controllers.Admin.AdminApplication.doedit_chapter
+POST        /chapter/moveup                        controllers.Admin.AdminApplication.chapterMoveUp
+POST        /chapter/movedown                      controllers.Admin.AdminApplication.chapterMoveDown
+
+GET         /concept/new                           controllers.Admin.AdminApplication.newConcept
+GET         /concept/edit                          controllers.Admin.AdminApplication.editConcept(slug:String)
+GET         /api/concept/list                      controllers.content.Concept.returnAllConcepts
+GET         /concept                               controllers.Admin.AdminApplication.infoConc(slug:String)
+POST        /concept/add                           controllers.Admin.AdminApplication.add_concept
+POST        /concept/doedit                        controllers.Admin.AdminApplication.doedit_concept
+POST        /concept/moveup                        controllers.Admin.AdminApplication.conceptMoveUp
+POST        /concept/movedown                      controllers.Admin.AdminApplication.conceptMoveDown
+
+GET         /forum                                 controllers.Forum.Forum.ForumPage
+GET         /forum/add                             controllers.Forum.Forum.addForumThread
+GET         /forum/thread                          controllers.Forum.Forum.getForumThread(slug:String)
+GET         /api/forum/thread                      controllers.Forum.Forum.getApiForumThread(slug:String)
+GET         /api/forum/thread/like                 controllers.Forum.Forum.getApiForumThreadLike(slug:String)
+GET         /api/forum/answer/like                 controllers.Forum.Forum.getApiForumAnswerLike(slug:String)
+GET         /api/forum/thread/userlike             controllers.Forum.Forum.getApiForumThreadLikedByUser(slug:String)
+GET         /api/forum/answer/userlike             controllers.Forum.Forum.getApiForumAnswerLikedByUser(slug:String)
+GET         /forum/thread/edit                     controllers.Forum.Forum.editForumThread(slug:String)
+POST        /forum/thread/doedit                   controllers.Forum.Forum.saveEditedForumThread
+POST        /forum/thread/save                     controllers.Forum.Forum.saveQuestion
+POST        /forum/answer/save                     controllers.Forum.Forum.saveAnswer
+GET         /forum/answer/edit                     controllers.Forum.Forum.editAnswerThread(slug:String)
+POST        /forum/answer/doedit                   controllers.Forum.Forum.saveEditedAnswer
+GET         /api/tag/list                          controllers.content.Tag.returnTags
+GET         /tag/new                               controllers.Admin.AdminApplication.newTag
+GET         /tag/edit                              controllers.Admin.AdminApplication.editTag(slug:String)
+GET         /tag                                   controllers.Admin.AdminApplication.infoTag(slug:String)
+POST        /tag/add                               controllers.Admin.AdminApplication.add_tag
+POST        /tag/doedit                            controllers.Admin.AdminApplication.doedit_tag
+
+
+GET         /data                                  controllers.Admin.AdminApplication.getAdminData
+GET         /m/users                               controllers.Admin.AdminApplication.getUsers
+POST        /api/m/users/change/role               controllers.Admin.AdminApplication.changeUserRole
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                          controllers.Assets.at(path="/public", file)
+#GET         /tested                                controllers.TestSocket.hello
+GET         /testws                                controllers.Application.testwebSocket

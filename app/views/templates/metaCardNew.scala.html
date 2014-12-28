@@ -1,0 +1,43 @@
+@(contentType:String,header:String,headerHover:Html,image:models.content.Image,videoUrl:String)
+
+@import be.objectify.deadbolt.java.views.html._
+
+<div class="metaCard">
+    <div class="metaCardHeader">
+    <h2 class="page-header">@contentType: <span class="capitalize">@header</span></h2>
+    </div>
+    <div class="metaCardBody">
+
+
+                    @if(videoUrl!=null){
+
+                        <div style="height:450px;">
+                            <iframe src="@videoUrl" height="450" style="width:100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                        </div>
+
+
+                     }else{
+
+                    }
+
+
+    </div>
+    <div class="metaCardFooter">
+  <br>
+        <br>
+        <br>
+        <a href="#" class="thumbnail">
+        @if(image==null){
+            <img height="200" style="height:200px;width:100%" src="@routes.Assets.at("img/landingpage/banner-bg.jpg")">
+
+        }else{
+            <img height="200" style="height:200px;width:100%" src="/assets@image.path.substring(6)">
+            }
+
+        </a>
+
+    @headerHover
+    </div>
+
+</div>

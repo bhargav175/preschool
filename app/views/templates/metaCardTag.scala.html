@@ -1,0 +1,39 @@
+@(header:String,slug:String,headerHover:Html,image:models.content.Image)
+
+@import be.objectify.deadbolt.java.views.html._
+
+<div class="metaCard">
+    <div class="metaCardHeader">
+        <h2 class="page-header"><span class="capitalize">@header</span></h2>
+    </div>
+    <div class="metaCardBody">
+
+        <a href="#" class="thumbnail">
+        @if(image==null){
+            <img src="@routes.Assets.at("img/landingpage/banner-bg.jpg")">
+
+        }else{
+            <img src="/assets@image.path.substring(6)">
+            }
+        </a>
+
+
+    <hr>
+        </div>
+    <div class="metaCardFooter">
+    @subjectPresentOr(){
+        <p ng-hide="true" id="user-name">@defining(Application.getLocalUser(session())) { user =>
+          @user.name
+        }</p>
+        <p ng-hide="true" id="tag-slug-name">@slug</p>
+        <p ng-hide="following"><button class="btn btn-primary" id="follow_button" ng-click="followTag()" >Follow <i class="fa fa-plus"></i></button></p>
+
+        <p ng-show="following"><button class="btn btn-default" id="unfollow_button" ng-click="unfollowTag()" >UnFollow <i class="fa fa-minus"></i></button></p>
+    </div>
+    }{
+
+    }
+
+
+
+</div>
