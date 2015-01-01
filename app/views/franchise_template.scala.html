@@ -1,0 +1,35 @@
+@(playForm: Form[Franchise],franchises: List[Franchise])
+@import helper._
+@import helper.twitterBootstrap._
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+@main("Franchise") {
+
+	@for(franchise <- franchises) {
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">@franchise.name</h3>
+			</div>
+			<div class="panel-body">
+				<p>@franchise.location</p>
+				<p>@franchise.request</p>
+				<p>@franchise.aboutUs</p>
+
+			</div>
+		</div>
+
+	}
+
+
+		@helper.form(action = routes.ContentController.saveFranchise(), 'class -> "form") {
+			@helper.inputText(playForm("name"), 'id -> "name", 'class -> "form-control", 'required -> "required")
+			@helper.inputText(playForm("location"), 'id -> "skills", 'class -> "form-control", 'required -> "required")
+			@helper.textarea(playForm("request"), 'id -> "experience", 'class -> "form-control", 'required -> "required")
+			@helper.textarea(playForm("aboutUs"), 'id -> "roles", 'class -> "form-control", 'required -> "required")
+			<button type="submit" class="btn btn-success">Go</button>
+		}
+
+
+}

@@ -1,44 +1,10 @@
 @(signupForm: Form[_])
 @import helper._
 @import helper.twitterBootstrap._
-
-
-    @scripts = {
-
-    }
-    @scriptsTop = {
-
-    }
-    @links = {
-
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-    }
-    @template_user_account_info(Messages("playauthenticate.signup.title"), "signup", scriptsTop, scripts, links) {
+@main("link") {
 
 
 
-        <div class="uauth col-md-offset-2 col-md-8">
-            <div class="modal-content animated fadeInLeft">
-                <div class="modal-header">
-                    <div class="col-md-12">
-                        <h3><a href="home">GyanPub</a></h3>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-
-
-
-            <div class="modal-content animated fadeInRight">
-                <div id="signup" >
-
-                    <div class="modal-body" style="overflow : hidden">
-
-                        <div class="container-fluid modal-body-container">
-                            <div class="col-md-8">
-                                <legend>Sign Up</legend>
-                                @* Display proprietary login form *@
                                 @helper.form(routes.Application.doSignup) {
 
                                     @if(signupForm.hasGlobalErrors) {
@@ -86,25 +52,5 @@
 
 
                                 }
-                            </div>
-                            <div class="col-md-4">
-
-                                <legend>Sign Up With</legend>
-                                @* Display list of available providers *@
-                                @_providerPartial(skipCurrent = false)
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-
-
-
-
 
 }

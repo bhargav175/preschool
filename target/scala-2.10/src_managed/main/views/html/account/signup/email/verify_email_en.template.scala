@@ -51,7 +51,7 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/signup/email/verify_email_en.scala.html
                     HASH: b078c793dfcd43fe35f58a1bbb1b8a874ca98059
                     MATRIX: 826->1|989->70|1032->79|1057->83|1209->200|1245->215

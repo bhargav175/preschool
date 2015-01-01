@@ -99,63 +99,62 @@ public class Global extends GlobalSettings {
 	private void initialData() {
 		if (SecurityRole.find.findRowCount() == 0) {
 			for (final String roleName : Arrays
-					.asList(SecurityRole.SUPERADMIN_ROLE, SecurityRole.ADMIN_ROLE, SecurityRole.MODERATOR_ROLE, SecurityRole.CONTENT_WRITER_ROLE, SecurityRole.ORGANIZATION_ROLE, SecurityRole.TEACHER_ROLE, SecurityRole.STUDENT_ROLE)) {
+					.asList(SecurityRole.ADMIN_ROLE, SecurityRole.TEACHER_ROLE, SecurityRole.PARENT_ROLE)) {
 				final SecurityRole role = new SecurityRole();
 				role.roleName = roleName;
 				role.save();
 			}
 		}
-        if (UserPermission.find.findRowCount() == 0) {
-            for (final String permissionName : Arrays
-                    .asList(
-							UserPermission.PERMISSION_CRU_ADMINS,
-							UserPermission.PERMISSION_CRU_MODERATORS,
-							UserPermission.PERMISSION_CRU_CONTENT_WRITER,
-							UserPermission.PERMISSION_CRU_ORGANIZATION,
-							UserPermission.PERMISSION_CRU_TEACHER,
-							UserPermission.PERMISSION_CRU_STUDENT,
-							UserPermission.PERMISSION_LOGIN,
-							UserPermission.PERMISSION_D_ADMIN,
-							UserPermission.PERMISSION_D_MODERATOR,
-							UserPermission.PERMISSION_D_CONTENT_WRITER,
-							UserPermission.PERMISSION_D_ORGANIZATION,
-							UserPermission.PERMISSION_D_TEACHER,
-							UserPermission.PERMISSION_D_STUDENT,
-							UserPermission.PERMISSION_BLOCK_ADMIN,
-							UserPermission.PERMISSION_BLOCK_MODERATOR,
-							UserPermission.PERMISSION_BLOCK_CONTENT_WRITER,
-							UserPermission.PERMISSION_BLOCK_ORGANIZATION,
-							UserPermission.PERMISSION_BLOCK_TEACHER,
-							UserPermission.PERMISSION_BLOCK_STUDENT,
-							UserPermission.PERMISSION_CRU_CONTENT,
-							UserPermission.PERMISSION_D_CONTENT,
-							UserPermission.PERMISSION_CRU_TAG,
-							UserPermission.PERMISSION_D_TAG,
-							UserPermission.PERMISSION_CRU_POST,
-							UserPermission.PERMISSION_D_POST,
-							UserPermission.PERMISSION_EDIT_POST,
-							UserPermission.PERMISSION_CRU_FORUM_QUESTION,
-							UserPermission.PERMISSION_FLAG_FORUM_QUESTION,
-							UserPermission.PERMISSION_D_FORUM_QUESTION,
-							UserPermission.PERMISSION_CRU_FORUM_ANSWER,
-							UserPermission.PERMISSION_FLAG_FORUM_ANSWER,
-							UserPermission.PERMISSION_D_FORUM_ANSWER,
-							UserPermission.PERMISSION_CRU_QUIZ,
-							UserPermission.PERMISSION_D_QUIZ,
-							UserPermission.PERMISSION_ASSIGN_ROLES,
-							UserPermission.PERMISSION_VIEW_CONTENT,
-							UserPermission.PERMISSION_UPVOTE_NOTES,
-							UserPermission.PERMISSION_DOWNVOTE_NOTES,
-							UserPermission.PERMISSION_UPVOTE_FORUM_QUESTION,
-							UserPermission.PERMISSION_DOWNVOTE_FORUM_QUESTION,
-							UserPermission.PERMISSION_UPVOTE_FORUM_ANSWER,
-							UserPermission.PERMISSION_DOWNVOTE_FORUM_ANSWER
-
-					)) {
-                final UserPermission userPermission = new UserPermission();
-                userPermission.value = permissionName;
-                userPermission.save();
-            }
+//        if (UserPermission.find.findRowCount() == 0) {
+//            for (final String permissionName : Arrays
+//                    .asList(
+//							UserPermission.PERMISSION_CRU_ADMINS,
+//							UserPermission.PERMISSION_CRU_MODERATORS,
+//							UserPermission.PERMISSION_CRU_CONTENT_WRITER,
+//							UserPermission.PERMISSION_CRU_ORGANIZATION,
+//							UserPermission.PERMISSION_CRU_TEACHER,
+//							UserPermission.PERMISSION_CRU_STUDENT,
+//							UserPermission.PERMISSION_LOGIN,
+//							UserPermission.PERMISSION_D_ADMIN,
+//							UserPermission.PERMISSION_D_MODERATOR,
+//							UserPermission.PERMISSION_D_CONTENT_WRITER,
+//							UserPermission.PERMISSION_D_ORGANIZATION,
+//							UserPermission.PERMISSION_D_TEACHER,
+//							UserPermission.PERMISSION_D_STUDENT,
+//							UserPermission.PERMISSION_BLOCK_ADMIN,
+//							UserPermission.PERMISSION_BLOCK_MODERATOR,
+//							UserPermission.PERMISSION_BLOCK_CONTENT_WRITER,
+//							UserPermission.PERMISSION_BLOCK_ORGANIZATION,
+//							UserPermission.PERMISSION_BLOCK_TEACHER,
+//							UserPermission.PERMISSION_BLOCK_STUDENT,
+//							UserPermission.PERMISSION_CRU_CONTENT,
+//							UserPermission.PERMISSION_D_CONTENT,
+//							UserPermission.PERMISSION_CRU_TAG,
+//							UserPermission.PERMISSION_D_TAG,
+//							UserPermission.PERMISSION_CRU_POST,
+//							UserPermission.PERMISSION_D_POST,
+//							UserPermission.PERMISSION_EDIT_POST,
+//							UserPermission.PERMISSION_CRU_FORUM_QUESTION,
+//							UserPermission.PERMISSION_FLAG_FORUM_QUESTION,
+//							UserPermission.PERMISSION_D_FORUM_QUESTION,
+//							UserPermission.PERMISSION_CRU_FORUM_ANSWER,
+//							UserPermission.PERMISSION_FLAG_FORUM_ANSWER,
+//							UserPermission.PERMISSION_D_FORUM_ANSWER,
+//							UserPermission.PERMISSION_CRU_QUIZ,
+//							UserPermission.PERMISSION_D_QUIZ,
+//							UserPermission.PERMISSION_ASSIGN_ROLES,
+//							UserPermission.PERMISSION_VIEW_CONTENT,
+//							UserPermission.PERMISSION_UPVOTE_NOTES,
+//							UserPermission.PERMISSION_DOWNVOTE_NOTES,
+//							UserPermission.PERMISSION_UPVOTE_FORUM_QUESTION,
+//							UserPermission.PERMISSION_DOWNVOTE_FORUM_QUESTION,
+//							UserPermission.PERMISSION_UPVOTE_FORUM_ANSWER,
+//							UserPermission.PERMISSION_DOWNVOTE_FORUM_ANSWER
+//
+//					)) {
+//                final UserPermission userPermission = new UserPermission();
+//                userPermission.value = permissionName;
+//                userPermission.save();
+//            }
         }
 	}
-}

@@ -1,0 +1,73 @@
+@(careers : List[Career],franchises : List[Franchise],enquiries : List[Enquiry],reports : List[WeeklyReport])
+
+@main("Admin") {
+	<legend>Enquiries</legend>
+
+	@for(enquiry <- enquiries){
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">@enquiry.name</h3>
+			</div>
+			<div class="panel-body">
+				<p>@enquiry.title</p>
+				<p>@enquiry.description</p>
+				<p>@enquiry.email</p>
+				<p><a class="danger"  href="@routes.ContentController.deleteEnquiry(enquiry.id.toString())">Delete</a></p>
+			</div>
+		</div>
+
+	}
+
+
+	<legend> Careers </legend>
+
+	@for(career <- careers){
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">@career.name</h3>
+			</div>
+			<div class="panel-body">
+				<p>@career.skills</p>
+				<p>@career.experience</p>
+				<p>@career.roles</p>
+				<p><a class="danger"  href="@routes.ContentController.deleteCareer(career.id.toString())">Delete</a></p>
+
+			</div>
+		</div>
+
+	}
+
+
+<legend>Franchises</legend>
+	@for(franchise <- franchises){
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">@franchise.name</h3>
+			</div>
+			<div class="panel-body">
+				<p>@franchise.location</p>
+				<p>@franchise.request</p>
+				<p>@franchise.aboutUs</p>
+				<p><a class="danger" href="@routes.ContentController.deleteFranchise(franchise.id.toString())">Delete</a></p>
+
+			</div>
+		</div>
+
+	}
+
+
+	<legend>Weekly Reports</legend>
+	@for(report <- reports){
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">@report.childName</h3>
+			</div>
+			<div class="panel-body">
+				<p>@report.percentage</p>
+				<p><a class="danger" href="@routes.ContentController.deleteWeeklyReport(report.id.toString())">Delete</a></p>
+
+			</div>
+		</div>
+
+	}
+}

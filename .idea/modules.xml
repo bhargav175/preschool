@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pre-school.iml" filepath="$PROJECT_DIR$/.idea/modules/pre-school.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pre-school-build.iml" filepath="$PROJECT_DIR$/.idea/modules/pre-school-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea_modules/preschool.iml" filepath="$PROJECT_DIR$/.idea_modules/preschool.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea_modules/preschool-build.iml" filepath="$PROJECT_DIR$/.idea_modules/preschool-build.iml" />
     </modules>

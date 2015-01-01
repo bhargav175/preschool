@@ -8,19 +8,11 @@ import com.avaje.ebean.ExpressionList;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.feth.play.module.pa.providers.password.UsernamePasswordAuthUser;
-import com.feth.play.module.pa.user.AuthUser;
-import com.feth.play.module.pa.user.AuthUserIdentity;
-import com.feth.play.module.pa.user.EmailIdentity;
-import com.feth.play.module.pa.user.NameIdentity;
-import com.feth.play.module.pa.user.FirstLastNameIdentity;
+import com.feth.play.module.pa.user.*;
 import controllers.Application;
 import models.TokenAction.Type;
-import models.content.ShortNote;
-import models.content.Tag;
-import models.other.Badge;
+
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
@@ -79,37 +71,12 @@ public class User extends Model implements Subject {
 	public List<UserPermission> permissions;
 
 
-	@JsonIgnore
-	@ManyToMany
-	public List<Badge> badges;
-
-    @JsonIgnore
-    @ManyToMany
-    @JoinTable(name="follower_map",
-            joinColumns=@JoinColumn(name="userId"),
-            inverseJoinColumns=@JoinColumn(name="followingId")
-    )
-    public List<User> following;
-
-    @JsonIgnore
-    @ManyToMany
-    @JoinTable(name="follower_map",
-            joinColumns=@JoinColumn(name="followingId"),
-            inverseJoinColumns=@JoinColumn(name="userId")
-    )
-    public List<User> followers;
-
-    @JsonBackReference("favoriteTags")
-    @ManyToMany
-    public List<Tag> favoriteTags;
-
-    @JsonProperty("score")
-    public Integer score=1;
 
 	public static final Finder<Long, User> find = new Finder<Long, User>(
 			Long.class, User.class);
+	private boolean teacher;
 
-    @JsonIgnore
+	@JsonIgnore
     @Override
 	public String getIdentifier()
 	{
@@ -174,7 +141,7 @@ public class User extends Model implements Subject {
 
 		// deactivate the merged user that got added to this one
 		otherUser.active = false;
-		Ebean.save(Arrays.asList(new User[] { otherUser, this }));
+		Ebean.save(Arrays.asList(new User[]{otherUser, this}));
 	}
 
 	public static User create(final AuthUser authUser) {
@@ -183,17 +150,13 @@ public class User extends Model implements Subject {
         if(controllers.Application.IS_SUPER_ADMIN ==false){
 
             user.roles = Collections.singletonList(SecurityRole
-                    .findByRoleName(SecurityRole.STUDENT_ROLE));
+                    .findByRoleName(SecurityRole.PARENT_ROLE));
         }
         else{
             user.roles = Collections.singletonList(SecurityRole
-                    .findByRoleName(SecurityRole.SUPERADMIN_ROLE));
+                    .findByRoleName(SecurityRole.ADMIN_ROLE));
         }
-		user.permissions = new ArrayList<UserPermission>();
-		user.permissions.add(UserPermission.findByValue(UserPermission.PERMISSION_LOGIN));
-		user.permissions.add(UserPermission.findByValue(UserPermission.PERMISSION_VIEW_CONTENT));
-		user.permissions.add(UserPermission.findByValue(UserPermission.PERMISSION_CRU_POST));
-		user.permissions.add(UserPermission.findByValue(UserPermission.PERMISSION_D_POST));
+
 		user.active = true;
 		user.lastLogin = new Date();
 		user.linkedAccounts = Collections.singletonList(LinkedAccount
@@ -309,17 +272,25 @@ public class User extends Model implements Subject {
     public static User findByUsername(String username) {
         return find.where().eq("name",username).findUnique();
     }
-    public static void updateUserScore(User user){
-        List<ShortNote> shortNoteList= ShortNote.findAllShortNotesByUser(user);
-        int score=1;
-        for(ShortNote shortNote: shortNoteList){
-            score=score+shortNote.upvotes.size()*10-shortNote.downvotes.size()*5;
-        }
-        user.score=score;
-        user.update();
-    }
 
 	public static User findUserById(Integer id) {
 		return find.where().eq("id", id).findUnique();
 	}
+
+	public  boolean isAdmin(){
+		List<SecurityRole> securityRoles = this.roles;
+		if(securityRoles.contains(SecurityRole.findByRoleName(SecurityRole.ADMIN_ROLE))){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean isTeacher() {
+		List<SecurityRole> securityRoles = this.roles;
+		if(securityRoles.contains(SecurityRole.findByRoleName(SecurityRole.TEACHER_ROLE))){
+			return true;
+		}else{
+			return false;
+		}	}
 }

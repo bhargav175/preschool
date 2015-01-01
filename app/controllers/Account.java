@@ -1,14 +1,12 @@
 package controllers;
 
-import models.SecurityRole;
-import models.User;
-import be.objectify.deadbolt.java.actions.Restrict;
 import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
 import be.objectify.deadbolt.java.actions.SubjectPresent;
-
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.user.AuthUser;
-
+import models.SecurityRole;
+import models.User;
 import play.data.Form;
 import play.data.format.Formats.NonEmpty;
 import play.data.validation.Constraints.MinLength;
@@ -19,6 +17,7 @@ import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthUser;
 import views.html.account.*;
+
 
 import static play.data.Form.form;
 
@@ -75,7 +74,7 @@ public class Account extends Controller {
 	}
 
 	private static final Form<Accept> ACCEPT_FORM = form(Accept.class);
-	private static final Form<Account.PasswordChange> PASSWORD_CHANGE_FORM = form(Account.PasswordChange.class);
+	private static final Form<PasswordChange> PASSWORD_CHANGE_FORM = form(Account.PasswordChange.class);
 
 	@SubjectPresent
 	public static Result link() {
@@ -83,7 +82,7 @@ public class Account extends Controller {
 		return ok(link.render());
 	}
 
-	@Restrict(@Group(SecurityRole.STUDENT_ROLE))
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
 	public static Result verifyEmail() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final User user = Application.getLocalUser(session());
@@ -102,10 +101,10 @@ public class Account extends Controller {
 					"playauthenticate.verify_email.error.set_email_first",
 					user.email));
 		}
-		return redirect(routes.Application.profile(user.name));
+		return redirect(routes.Application.user_account());
 	}
 
-	@Restrict(@Group(SecurityRole.STUDENT_ROLE))
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
 	public static Result changePassword() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final User u = Application.getLocalUser(session());
@@ -117,10 +116,10 @@ public class Account extends Controller {
 		}
 	}
 
-	@Restrict(@Group(SecurityRole.STUDENT_ROLE))
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
 	public static Result doChangePassword() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-		final Form<Account.PasswordChange> filledForm = PASSWORD_CHANGE_FORM
+		final Form<PasswordChange> filledForm = PASSWORD_CHANGE_FORM
 				.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			// UserController did not select whether to link or not link
@@ -132,7 +131,7 @@ public class Account extends Controller {
 					true);
 			flash(Application.FLASH_MESSAGE_KEY,
 					Messages.get("playauthenticate.change_password.success"));
-			return redirect(routes.Application.profile(user.name));
+			return redirect(routes.Application.user_account());
 		}
 	}
 

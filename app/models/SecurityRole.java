@@ -15,28 +15,23 @@
  */
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import be.objectify.deadbolt.core.models.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import play.db.ebean.Model;
-import be.objectify.deadbolt.core.models.Role;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * @author Steve Chaloner (steve@objectify.be)
  */
 @Entity
 public class SecurityRole extends Model implements Role {
-	public static final String SUPERADMIN_ROLE = "super-admin";
-	public static final String ADMIN_ROLE = "admin";
-	public static final String MODERATOR_ROLE = "moderator";
-	public static final String CONTENT_WRITER_ROLE = "content-writer";
-	public static final String ORGANIZATION_ROLE = "organization";
 	public static final String TEACHER_ROLE = "teacher";
-	public static final String STUDENT_ROLE = "student";
+	public static final String ADMIN_ROLE = "admin";
+	public static final String PARENT_ROLE = "parent";
+
 	/**
 	 * 
 	 */

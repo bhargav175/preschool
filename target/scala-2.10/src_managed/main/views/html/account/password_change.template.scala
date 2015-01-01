@@ -29,7 +29,7 @@ object password_change extends BaseScalaTemplate[play.api.templates.HtmlFormat.A
 
 Seq[Any](format.raw/*1.56*/("""
 """),format.raw/*3.1*/("""
-"""),_display_(Seq[Any](/*4.2*/template_user_settings(null)/*4.30*/ {_display_(Seq[Any](format.raw/*4.32*/("""
+	"""),_display_(Seq[Any](/*4.3*/main("link")/*4.15*/ {_display_(Seq[Any](format.raw/*4.17*/("""
 
 	<h1>"""),_display_(Seq[Any](/*6.7*/Messages("playauthenticate.change.password.title"))),format.raw/*6.57*/("""</h1>
 	<p>
@@ -58,10 +58,10 @@ Seq[Any](format.raw/*1.56*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:29 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/password_change.scala.html
-                    HASH: dbc0baca597c07d7134d67851fe9cfc117c33699
-                    MATRIX: 826->1|1005->55|1033->89|1070->92|1106->120|1145->122|1189->132|1260->182|1309->197|1354->234|1393->236|1444->252|1483->282|1523->284|1636->361|1655->371|1697->391|1757->420|1801->429|1851->457|1933->503|2003->551|2065->582
+                    HASH: dd9763b6fbb30a455ba0247dabf69c5c0750038c
+                    MATRIX: 826->1|1005->55|1033->89|1071->93|1091->105|1130->107|1174->117|1245->167|1294->182|1339->219|1378->221|1429->237|1468->267|1508->269|1621->346|1640->356|1682->376|1742->405|1786->414|1836->442|1918->488|1988->536|2050->567
                     LINES: 26->1|30->1|31->3|32->4|32->4|32->4|34->6|34->6|36->8|36->8|36->8|38->10|38->10|38->10|40->12|40->12|40->12|42->14|44->16|44->16|46->18|46->18|47->19
                     -- GENERATED --
                 */

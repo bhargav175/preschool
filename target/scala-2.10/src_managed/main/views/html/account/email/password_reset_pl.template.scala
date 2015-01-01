@@ -52,7 +52,7 @@ Cześć """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/email/password_reset_pl.scala.html
                     HASH: 1c5b788869dc1538d05a79034411851e579322bf
                     MATRIX: 821->1|972->58|1015->67|1040->71|1291->286|1316->289

@@ -14,8 +14,8 @@
           <value>
             <ProjectSettingsEntry>
               <option name="version" value="2.2.3" />
-              <option name="sourceDir" value="W:\Pre School\app" />
-              <option name="confDir" value="W:\Pre School\conf" />
+              <option name="sourceDir" value="W:\Pre School\conf" />
+              <option name="confDir" value="W:\Pre School\app" />
               <option name="routesImports">
                 <list>
                   <option value="play.libs.F" />

@@ -1,18 +1,16 @@
 package models;
 
-import java.util.Date;
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.QueryIterator;
+import com.avaje.ebean.annotation.EnumValue;
+import play.data.format.Formats;
+import play.db.ebean.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import play.data.format.Formats;
-import play.db.ebean.Model;
-
-import com.avaje.ebean.Ebean;
-import com.avaje.ebean.QueryIterator;
-import com.avaje.ebean.annotation.EnumValue;
+import java.util.Date;
 
 @Entity
 public class TokenAction extends Model {

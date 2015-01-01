@@ -1,5 +1,6 @@
 package controllers;
 
+import com.feth.play.module.pa.PlayAuthenticate;
 import models.TokenAction;
 import models.TokenAction.Type;
 import models.User;
@@ -12,8 +13,6 @@ import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthProvider.MyIdentity;
 import providers.MyUsernamePasswordAuthUser;
 import views.html.account.signup.*;
-
-import com.feth.play.module.pa.PlayAuthenticate;
 
 import static play.data.Form.form;
 

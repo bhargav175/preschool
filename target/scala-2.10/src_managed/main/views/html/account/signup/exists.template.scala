@@ -25,25 +25,8 @@ object exists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable
     /**/
     def apply():play.api.templates.HtmlFormat.Appendable = {
         _display_ {
-def /*4.2*/scripts/*4.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*4.13*/("""
-
-""")))};def /*7.2*/scriptsTop/*7.12*/:play.api.templates.HtmlFormat.Appendable = {_display_(
-
-Seq[Any](format.raw/*7.16*/("""
-
-""")))};def /*10.2*/links/*10.7*/:play.api.templates.HtmlFormat.Appendable = {_display_(
-
-Seq[Any](format.raw/*10.11*/("""
-
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-""")))};
-Seq[Any](format.raw/*6.2*/("""
-"""),format.raw/*9.2*/("""
-"""),format.raw/*14.2*/("""
-"""),_display_(Seq[Any](/*15.2*/template_user_account_info(Messages("playauthenticate.login.title"), "login", scriptsTop, scripts, links)/*15.107*/ {_display_(Seq[Any](format.raw/*15.109*/("""
+Seq[Any](_display_(Seq[Any](/*2.2*/main("link")/*2.14*/ {_display_(Seq[Any](format.raw/*2.16*/("""
     <div class="uauth col-md-offset-2 col-md-8">
         <div class="modal-content animated fadeInLeft">
             <div class="modal-header">
@@ -56,8 +39,8 @@ Seq[Any](format.raw/*6.2*/("""
         <div class="modal-content animated fadeInLeft">
             <div class="modal-body" style="overflow : hidden">
                 <div class="container-fluid modal-body-container">
-	<legend>"""),_display_(Seq[Any](/*28.11*/Messages("playauthenticate.user.exists.title"))),format.raw/*28.57*/("""</legend>
-	<p>"""),_display_(Seq[Any](/*29.6*/Messages("playauthenticate.user.exists.message"))),format.raw/*29.54*/("""</p>
+	<legend>"""),_display_(Seq[Any](/*15.11*/Messages("playauthenticate.user.exists.title"))),format.raw/*15.57*/("""</legend>
+	<p>"""),_display_(Seq[Any](/*16.6*/Messages("playauthenticate.user.exists.message"))),format.raw/*16.54*/("""</p>
     </div>
     </div>
     </div>
@@ -74,11 +57,11 @@ Seq[Any](format.raw/*6.2*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/signup/exists.scala.html
-                    HASH: eab9c8a4e37d0a140f6fe4ea083fe059d930ddf1
-                    MATRIX: 855->7|869->14|953->18|980->26|998->36|1082->40|1110->48|1123->53|1208->57|1355->23|1383->45|1412->166|1450->169|1565->274|1606->276|2204->838|2272->884|2323->900|2393->948
-                    LINES: 28->4|28->4|30->4|32->7|32->7|34->7|36->10|36->10|38->10|43->6|44->9|45->14|46->15|46->15|46->15|59->28|59->28|60->29|60->29
+                    HASH: 70b1c823f9f922f3bd8d4d82450db131cc1c2fdb
+                    MATRIX: 880->3|900->15|939->17|1537->579|1605->625|1656->641|1726->689
+                    LINES: 29->2|29->2|29->2|42->15|42->15|43->16|43->16
                     -- GENERATED --
                 */
             

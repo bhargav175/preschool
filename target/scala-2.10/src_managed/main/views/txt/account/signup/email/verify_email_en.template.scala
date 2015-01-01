@@ -47,7 +47,7 @@ The PlayAuthenticate Team"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/signup/email/verify_email_en.scala.txt
                     HASH: 6768d9b668f5386ce5f3c79d6c69dd63e5a512b3
                     MATRIX: 820->1|982->70|1024->77|1049->81|1188->186|1224->201

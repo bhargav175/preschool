@@ -54,7 +54,7 @@ Seq[Any](format.raw/*1.44*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:29 IST 2014
+                    DATE: Thu Jan 01 22:26:56 IST 2015
                     SOURCE: W:/Pre School/app/views/_emailPartial.scala.html
                     HASH: a44a2ce8d6673bbedf1d3b87e6aac977f73f3106
                     MATRIX: 864->1|1052->43|1082->100|1119->103

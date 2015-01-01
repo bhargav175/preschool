@@ -49,7 +49,7 @@ Das PlayAuthenticate-Team"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/email/password_reset_de.scala.txt
                     HASH: 10141f3469f5cdc82c89c79cd5367c7dcabc9560
                     MATRIX: 815->1|965->58|1005->63|1030->67|1339->342|1362->345

@@ -23,27 +23,16 @@ import views.html._
 object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply():play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/():play.api.templates.HtmlFormat.Appendable = {
         _display_ {
-def /*2.2*/scripts/*2.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*2.11*/("""
-""")))};def /*4.2*/scriptsTop/*4.12*/:play.api.templates.HtmlFormat.Appendable = {_display_(
+Seq[Any](format.raw/*1.4*/("""
 
-Seq[Any](format.raw/*4.14*/("""
+"""),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
+	<script type='text/javascript' src='"""),_display_(Seq[Any](/*4.39*/routes/*4.45*/.Assets.at("javascripts/index.js"))),format.raw/*4.79*/("""'></script>
 
-""")))};def /*7.2*/links/*7.7*/:play.api.templates.HtmlFormat.Appendable = {_display_(
-
-Seq[Any](format.raw/*7.9*/("""
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-""")))};
-Seq[Any](format.raw/*3.2*/("""
-"""),format.raw/*6.2*/("""
-"""),format.raw/*9.2*/("""
-"""),_display_(Seq[Any](/*10.2*/template_landing_page(Messages("playauthenticate.index.title"), "home",scriptsTop,scripts,links)/*10.98*/ {_display_(Seq[Any](format.raw/*10.100*/("""
-      <!-- Main hero unit for a primary marketing message or call to action -->
-
-    """)))})))}
+""")))})),format.raw/*6.2*/("""
+"""))}
     }
     
     def render(): play.api.templates.HtmlFormat.Appendable = apply()
@@ -55,11 +44,11 @@ Seq[Any](format.raw/*3.2*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:22 IST 2014
+                    DATE: Thu Jan 01 22:26:55 IST 2015
                     SOURCE: W:/Pre School/app/views/index.scala.html
-                    HASH: 31a68d8832b16267739226c9b5aa75fccdd74c76
-                    MATRIX: 839->3|853->10|937->12|962->18|980->28|1064->30|1091->38|1103->43|1186->45|1329->15|1357->35|1385->150|1423->153|1528->249|1569->251
-                    LINES: 28->2|28->2|30->2|31->4|31->4|33->4|35->7|35->7|37->7|40->3|41->6|42->9|43->10|43->10|43->10
+                    HASH: 762339a7db5aad722742df1b7b8cbe61923a7008
+                    MATRIX: 767->1|862->3|899->6|930->29|969->31|1043->70|1057->76|1112->110|1156->124
+                    LINES: 26->1|29->1|31->3|31->3|31->3|32->4|32->4|32->4|34->6
                     -- GENERATED --
                 */
             

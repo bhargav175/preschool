@@ -28,29 +28,12 @@ object password_forgot extends BaseScalaTemplate[play.api.templates.HtmlFormat.A
 
 import helper.twitterBootstrap._
 
-def /*7.6*/scripts/*7.13*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*7.17*/("""
-
-    """)))};def /*10.6*/scriptsTop/*10.16*/:play.api.templates.HtmlFormat.Appendable = {_display_(
-
-Seq[Any](format.raw/*10.20*/("""
-
-    """)))};def /*13.6*/links/*13.11*/:play.api.templates.HtmlFormat.Appendable = {_display_(
-
-Seq[Any](format.raw/*13.15*/("""
-
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-    """)))};
 Seq[Any](format.raw/*1.72*/("""
 
 """),format.raw/*5.1*/("""
 
-    """),format.raw/*9.6*/("""
-    """),format.raw/*12.6*/("""
-    """),format.raw/*17.6*/("""
-    """),_display_(Seq[Any](/*18.6*/template_user_account_info(Messages("playauthenticate.login.title"), "login", scriptsTop, scripts, links)/*18.111*/ {_display_(Seq[Any](format.raw/*18.113*/("""
+    """),_display_(Seq[Any](/*7.6*/main("link")/*7.18*/ {_display_(Seq[Any](format.raw/*7.20*/("""
         <div class="uauth col-md-offset-2 col-md-8">
             <div class="modal-content animated fadeInLeft">
                 <div class="modal-header">
@@ -63,21 +46,21 @@ Seq[Any](format.raw/*1.72*/("""
             <div class="modal-content animated fadeInLeft">
                 <div class="modal-body" style="overflow : hidden">
                     <div class="container-fluid modal-body-container">
-	<legend>"""),_display_(Seq[Any](/*31.11*/Messages("playauthenticate.password.forgot.title"))),format.raw/*31.61*/("""</legend>
+	<legend>"""),_display_(Seq[Any](/*20.11*/Messages("playauthenticate.password.forgot.title"))),format.raw/*20.61*/("""</legend>
 
 	<p>
-	"""),_display_(Seq[Any](/*34.3*/form(routes.Signup.doForgotPassword)/*34.39*/ {_display_(Seq[Any](format.raw/*34.41*/("""
+	"""),_display_(Seq[Any](/*23.3*/form(routes.Signup.doForgotPassword)/*23.39*/ {_display_(Seq[Any](format.raw/*23.41*/("""
 	   
-            """),_display_(Seq[Any](/*36.14*/if(emailForm.hasGlobalErrors)/*36.43*/ {_display_(Seq[Any](format.raw/*36.45*/(""" 
+            """),_display_(Seq[Any](/*25.14*/if(emailForm.hasGlobalErrors)/*25.43*/ {_display_(Seq[Any](format.raw/*25.45*/(""" 
                 <p class="error">
-		            <span class="label label-important">"""),_display_(Seq[Any](/*38.52*/emailForm/*38.61*/.globalError.message)),format.raw/*38.81*/("""</span>
+		            <span class="label label-important">"""),_display_(Seq[Any](/*27.52*/emailForm/*27.61*/.globalError.message)),format.raw/*27.81*/("""</span>
 		        </p>
-            """)))})),format.raw/*40.14*/("""
+            """)))})),format.raw/*29.14*/("""
 	   
-	   """),_display_(Seq[Any](/*42.6*/_emailPartial(emailForm))),format.raw/*42.30*/("""
+	   """),_display_(Seq[Any](/*31.6*/_emailPartial(emailForm))),format.raw/*31.30*/("""
            
-		<input type="submit" value=""""),_display_(Seq[Any](/*44.32*/Messages("playauthenticate.password.forgot.cta"))),format.raw/*44.80*/("""" class="btn btn-primary"> 
-	""")))})),format.raw/*45.3*/("""
+		<input type="submit" value=""""),_display_(Seq[Any](/*33.32*/Messages("playauthenticate.password.forgot.cta"))),format.raw/*33.80*/("""" class="btn btn-primary"> 
+	""")))})),format.raw/*34.3*/("""
 	</p>
                         </div>
                     </div>
@@ -95,11 +78,11 @@ Seq[Any](format.raw/*1.72*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/signup/password_forgot.scala.html
-                    HASH: e0e9303097f9814b6eb1c25fc0702e28f974f660
-                    MATRIX: 850->1|1049->137|1064->144|1148->148|1180->164|1199->174|1284->178|1316->194|1330->199|1415->203|1571->71|1601->128|1635->157|1668->187|1701->320|1743->327|1858->432|1899->434|2545->1044|2617->1094|2673->1115|2718->1151|2758->1153|2815->1174|2853->1203|2893->1205|3018->1294|3036->1303|3078->1323|3148->1361|3196->1374|3242->1398|3324->1444|3394->1492|3456->1523
-                    LINES: 26->1|31->7|31->7|33->7|35->10|35->10|37->10|39->13|39->13|41->13|46->1|48->5|50->9|51->12|52->17|53->18|53->18|53->18|66->31|66->31|69->34|69->34|69->34|71->36|71->36|71->36|73->38|73->38|73->38|75->40|77->42|77->42|79->44|79->44|80->45
+                    HASH: 0c91a500f9a434335671095731b00482f824fc37
+                    MATRIX: 850->1|1066->71|1096->128|1139->137|1159->149|1198->151|1844->761|1916->811|1972->832|2017->868|2057->870|2114->891|2152->920|2192->922|2317->1011|2335->1020|2377->1040|2447->1078|2495->1091|2541->1115|2623->1161|2693->1209|2755->1240
+                    LINES: 26->1|32->1|34->5|36->7|36->7|36->7|49->20|49->20|52->23|52->23|52->23|54->25|54->25|54->25|56->27|56->27|56->27|58->29|60->31|60->31|62->33|62->33|63->34
                     -- GENERATED --
                 */
             

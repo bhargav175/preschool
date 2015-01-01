@@ -49,7 +49,7 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/email/verify_email_en.scala.html
                     HASH: d73b5a5ea1409031e924abfa0b12d0993cd29596
                     MATRIX: 819->1|982->70|1025->79|1050->83|1151->149|1187->164

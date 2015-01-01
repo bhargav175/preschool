@@ -8,8 +8,4 @@
       <parameter value="utf8" />
     </parameters>
   </component>
-  <component name="ScalacSettings">
-    <option name="COMPILER_LIBRARY_NAME" value="SBT: scala:2.10.3" />
-    <option name="COMPILER_LIBRARY_LEVEL" value="Project" />
-  </component>
 </project>

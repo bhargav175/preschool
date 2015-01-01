@@ -50,7 +50,7 @@ Hola """),_display_(Seq[Any](/*2.7*/name)),format.raw/*2.11*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:30 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/email/verify_email_es.scala.html
                     HASH: 47dcb1550f899d0d54e7c99bba647038e0590933
                     MATRIX: 819->1|982->70|1024->78|1049->82|1159->157|1195->172

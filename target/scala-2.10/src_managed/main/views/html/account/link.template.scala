@@ -23,10 +23,11 @@ import views.html._
 object link extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply():play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/():play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](_display_(Seq[Any](/*2.2*/template_user_settings(null)/*2.30*/ {_display_(Seq[Any](format.raw/*2.32*/("""
+Seq[Any](format.raw/*1.4*/("""
+"""),_display_(Seq[Any](/*2.2*/main("link")/*2.14*/ {_display_(Seq[Any](format.raw/*2.16*/("""
 
 
                 <h1>"""),_display_(Seq[Any](/*5.22*/Messages("playauthenticate.link.user_account.title"))),format.raw/*5.74*/("""</h1>
@@ -49,11 +50,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/template_user_settings(null)/*2.30*/ {_displa
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Dec 28 16:26:29 IST 2014
+                    DATE: Thu Jan 01 22:26:57 IST 2015
                     SOURCE: W:/Pre School/app/views/account/link.scala.html
-                    HASH: 02b6e1f49e5517294bdf848cd957777b95e7a2e8
-                    MATRIX: 871->3|907->31|946->33|1008->60|1081->112|1139->136|1178->154
-                    LINES: 29->2|29->2|29->2|32->5|32->5|35->8|35->8
+                    HASH: 1a16953caf972e9e462a10b7f24d6d46cdf8c722
+                    MATRIX: 774->1|869->3|906->6|926->18|965->20|1027->47|1100->99|1158->123|1197->141
+                    LINES: 26->1|29->1|30->2|30->2|30->2|33->5|33->5|36->8|36->8
                     -- GENERATED --
                 */
             
