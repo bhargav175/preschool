@@ -100,32 +100,32 @@ Seq[Any](format.raw/*1.32*/("""
 
 
 
-        <div class="container">
-                        <!-- Example row of columns -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                    </div>
+        """),format.raw/*74.36*/("""
+                        """),format.raw/*75.60*/("""
+                    """),format.raw/*76.42*/("""
+                        """),format.raw/*77.51*/("""
+                            """),format.raw/*78.49*/("""
+                            """),format.raw/*79.272*/("""
+                            """),format.raw/*80.114*/("""
+                        """),format.raw/*81.35*/("""
+                        """),format.raw/*82.51*/("""
+                            """),format.raw/*83.49*/("""
+                            """),format.raw/*84.272*/("""
+                            """),format.raw/*85.114*/("""
+                        """),format.raw/*86.35*/("""
+                        """),format.raw/*87.51*/("""
+                            """),format.raw/*88.49*/("""
+                            """),format.raw/*89.283*/("""
+                            """),format.raw/*90.114*/("""
+                        """),format.raw/*91.35*/("""
+                    """),format.raw/*92.31*/("""
 
-                    <hr>
+                    """),format.raw/*94.29*/("""
 
-                    <footer>
-                        <p>&copy; Company 2014</p>
-                    </footer>
-                </div> <!-- /container -->
+                    """),format.raw/*96.33*/("""
+                        """),format.raw/*97.55*/("""
+                    """),format.raw/*98.34*/("""
+                """),format.raw/*99.47*/("""
 
 
                 <!-- Bootstrap core JavaScript
@@ -152,11 +152,11 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jan 02 04:02:07 IST 2015
+                    DATE: Fri Jan 02 09:33:06 IST 2015
                     SOURCE: W:/Pre School/app/views/main.scala.html
-                    HASH: be751fb74755c013b6a853ac2f9e3cbf9acd00dc
-                    MATRIX: 778->1|1006->31|1034->138|1122->190|1149->195|1252->262|1267->268|1321->300|1398->341|1413->347|1470->382|1531->407|1546->413|1614->459|1707->516|1722->522|1786->564|3244->1986|3271->2004|3310->2005|3431->2107|3470->2108|3683->2289|3999->2569|4028->2576
-                    LINES: 26->1|32->1|34->5|39->10|39->10|40->11|40->11|40->11|41->12|41->12|41->12|42->13|42->13|42->13|43->14|43->14|43->14|70->41|70->41|70->41|74->45|74->45|78->49|89->60|89->60
+                    HASH: f285013d8712f6ae268205d1748a568cac0d3299
+                    MATRIX: 778->1|1006->31|1034->138|1122->190|1149->195|1252->262|1267->268|1321->300|1398->341|1413->347|1470->382|1531->407|1546->413|1614->459|1707->516|1722->522|1786->564|3244->1986|3271->2004|3310->2005|3431->2107|3470->2108|3683->2289|3999->2569|4028->2576|4256->2803|4309->2863|4358->2905|4411->2956|4468->3005|4526->3277|4584->3391|4637->3426|4690->3477|4747->3526|4805->3798|4863->3912|4916->3947|4969->3998|5026->4047|5084->4330|5142->4444|5195->4479|5244->4510|5294->4540|5344->4574|5397->4629|5446->4663|5491->4710
+                    LINES: 26->1|32->1|34->5|39->10|39->10|40->11|40->11|40->11|41->12|41->12|41->12|42->13|42->13|42->13|43->14|43->14|43->14|70->41|70->41|70->41|74->45|74->45|78->49|89->60|89->60|103->74|104->75|105->76|106->77|107->78|108->79|109->80|110->81|111->82|112->83|113->84|114->85|115->86|116->87|117->88|118->89|119->90|120->91|121->92|123->94|125->96|126->97|127->98|128->99
                     -- GENERATED --
                 */
             

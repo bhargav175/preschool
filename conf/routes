@@ -62,6 +62,20 @@ GET         /enquiries                             controllers.ContentController
 GET         /franchises                            controllers.ContentController.franchises
 GET         /careerrs                              controllers.ContentController.careers
 
+GET         /enquiry/:id/edit                      controllers.ContentController.enquiryEdit(id:String)
+GET         /franchise/:id/edit                     controllers.ContentController.franchiseEdit(id:String)
+GET         /career/:id/edit                       controllers.ContentController.careerEdit(id:String)
+GET         /weeklyreport/:id/edit                 controllers.ContentController.weeklyReportEdit(id:String)
+
+POST         /enquiry/:id/edit                      controllers.ContentController.enquiryUpdate(id:String)
+POST         /franchise/:id/edit                     controllers.ContentController.franchiseUpdate(id:String)
+POST         /career/:id/edit                       controllers.ContentController.careerUpdate(id:String)
+POST         /weeklyreport/:id/edit                 controllers.ContentController.weeklyReportUpdate(id:String)
+
+
+
+
+
 POST        /career                                controllers.ContentController.saveCareer
 POST        /enquiry                               controllers.ContentController.saveEnquiry
 POST        /franchise                             controllers.ContentController.saveFranchise

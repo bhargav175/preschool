@@ -1,6 +1,8 @@
 @(careers : List[Career],franchises : List[Franchise],enquiries : List[Enquiry],reports : List[WeeklyReport])
 
 @main("Admin") {
+	<h1> Hi Admin! You can do anything!</h1>
+
 	<legend>Enquiries</legend>
 
 	@for(enquiry <- enquiries){
@@ -31,6 +33,7 @@
 				<p>@career.experience</p>
 				<p>@career.roles</p>
 				<p><a class="danger"  href="@routes.ContentController.deleteCareer(career.id.toString())">Delete</a></p>
+				<p><a class="danger" href="@routes.ContentController.careerEdit(career.id.toString())">Edit</a></p>
 
 			</div>
 		</div>
@@ -65,6 +68,7 @@
 			<div class="panel-body">
 				<p>@report.percentage</p>
 				<p><a class="danger" href="@routes.ContentController.deleteWeeklyReport(report.id.toString())">Delete</a></p>
+				<p><a class="danger" href="@routes.ContentController.weeklyReportEdit(report.id.toString())">Edit</a></p>
 
 			</div>
 		</div>

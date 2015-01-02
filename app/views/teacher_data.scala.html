@@ -9,6 +9,8 @@
 
 @main("Teacher") {
 
+    <h1> Hey Teacher! You can Create, Read, Update and Delete Weekly Records!</h1>
+
     <legend>Weekly Reports</legend>
     @for(report <- reports){
         <div class="panel panel-primary">
@@ -18,6 +20,7 @@
             <div class="panel-body">
                 <p>@report.percentage</p>
                 <p><a class="danger" href="@routes.ContentController.deleteWeeklyReport(report.id.toString())">Delete</a></p>
+                <p><a class="danger" href="@routes.ContentController.weeklyReportEdit(report.id.toString())">Edit</a></p>
 
             </div>
         </div>

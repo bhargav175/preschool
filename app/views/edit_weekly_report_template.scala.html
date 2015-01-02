@@ -1,0 +1,26 @@
+@(playForm: Form[WeeklyReport],report:WeeklyReport)
+@import helper._
+@import helper.twitterBootstrap._
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+@main("Weekly Report") {
+
+
+	@subjectPresentOr() {
+		@defining(Application.getLocalUser(session())) { user =>
+			@if(user.isAdmin() || user.isTeacher()) {
+				@helper.form(action = routes.ContentController.weeklyReportUpdate(report.id.toString()), 'class -> "form") {
+					@helper.inputText(playForm("childName"), 'id -> "childname", 'class -> "form-control", 'required -> "required")
+					@helper.inputText(playForm("percentage"),'type -> "number", 'id -> "percentage", 'class -> "form-control", 'required -> "required")
+					<button type="submit" class="btn btn-success">Go</button>
+				}
+
+			}
+
+		}
+	}{
+
+	}
+}

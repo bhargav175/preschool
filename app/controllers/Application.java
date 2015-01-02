@@ -48,19 +48,16 @@ public class Application extends Controller {
                 List<Franchise> franchiseList = Franchise.findAll();
                 List<Career> careerList = Career.findAll();
                 List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
-
                 return ok(admin_data.render(careerList,franchiseList,enquiryList,weeklyReports));
-
             }else if(localUser.isTeacher()){
                 List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
-
                 return ok(teacher_data.render(weeklyReports));
             }else {
-                return ok(index.render());
+                List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
+                return ok(parent_data.render(weeklyReports));
             }
-
         }else{
-            return ok(index.render());
+            return ok(landing.render());
         }
     }
 

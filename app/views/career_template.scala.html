@@ -24,7 +24,7 @@
 
 	@subjectPresentOr() {
 		@defining(Application.getLocalUser(session())) { user =>
-		@if(user.isAdmin() || user.isTeacher()){
+			@if(user.isAdmin() || user.isTeacher()){
 			@helper.form(action = routes.ContentController.saveCareer(),'class->"form") {
 				@helper.inputText(playForm("name"),'id -> "name",'class -> "form-control",'required ->"required")
 				@helper.inputText(playForm("skills"),'id -> "skills",'class -> "form-control")

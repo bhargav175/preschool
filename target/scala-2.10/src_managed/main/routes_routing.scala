@@ -1,6 +1,6 @@
 // @SOURCE:W:/Pre School/conf/routes
-// @HASH:634b9baf9a30150472c1d7c13d439ef8ec3e76bf
-// @DATE:Fri Jan 02 04:02:07 IST 2015
+// @HASH:d715bd28b9922e05b8e914bf56315dfd1eb15d7e
+// @DATE:Fri Jan 02 04:46:21 IST 2015
 
 
 import play.core._
@@ -173,41 +173,73 @@ private[this] lazy val controllers_ContentController_careers35 = Route("GET", Pa
         
 
 // @LINE:65
-private[this] lazy val controllers_ContentController_saveCareer36 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career"))))
+private[this] lazy val controllers_ContentController_enquiryEdit36 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:66
-private[this] lazy val controllers_ContentController_saveEnquiry37 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry"))))
+private[this] lazy val controllers_ContentController_franchiseEdit37 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:67
-private[this] lazy val controllers_ContentController_saveFranchise38 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise"))))
+private[this] lazy val controllers_ContentController_careerEdit38 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:68
-private[this] lazy val controllers_ContentController_saveWeeklyReport39 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport"))))
+private[this] lazy val controllers_ContentController_weeklyReportEdit39 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:70
-private[this] lazy val controllers_ContentController_deleteEnquiry40 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry/del"))))
+private[this] lazy val controllers_ContentController_enquiryUpdate40 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:71
-private[this] lazy val controllers_ContentController_deleteFranchise41 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise/del"))))
+private[this] lazy val controllers_ContentController_franchiseUpdate41 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:72
-private[this] lazy val controllers_ContentController_deleteCareer42 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career/del"))))
+private[this] lazy val controllers_ContentController_careerUpdate42 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
 // @LINE:73
-private[this] lazy val controllers_ContentController_deleteWeeklyReport43 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport/del"))))
+private[this] lazy val controllers_ContentController_weeklyReportUpdate43 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport/"),DynamicPart("id", """[^/]+""",true),StaticPart("/edit"))))
         
 
-// @LINE:78
-private[this] lazy val controllers_Assets_at44 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:79
+private[this] lazy val controllers_ContentController_saveCareer44 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascript/routes.js""","""controllers.Application.jsRoutes"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """account""","""controllers.Application.user_account"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""com.feth.play.module.pa.controllers.Authenticate.logout"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""com.feth.play.module.pa.controllers.Authenticate.authenticate(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.doSignup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unverified""","""controllers.Signup.unverified"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>/denied""","""controllers.Signup.oAuthDenied(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify/$token<[^/]+>""","""controllers.Signup.verify(token:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/exists""","""controllers.Signup.exists"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset/$token<[^/]+>""","""controllers.Signup.resetPassword(token:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset""","""controllers.Signup.doResetPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.changePassword"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.doChangePassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify""","""controllers.Account.verifyEmail"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/add""","""controllers.Account.link"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.askLink"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.doLink"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.askMerge"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.doMerge"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.forgotPassword(email:String ?= "")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.doForgotPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signupadmin""","""controllers.Application.signupAdmin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """404""","""controllers.Application.notfound"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """about""","""controllers.Application.about"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.Application.contact"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry""","""controllers.ContentController.enquiry"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise""","""controllers.ContentController.franchise"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career""","""controllers.ContentController.career"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport""","""controllers.ContentController.weeklyReport"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiries""","""controllers.ContentController.enquiries"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchises""","""controllers.ContentController.franchises"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """careerrs""","""controllers.ContentController.careers"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career""","""controllers.ContentController.saveCareer"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry""","""controllers.ContentController.saveEnquiry"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise""","""controllers.ContentController.saveFranchise"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport""","""controllers.ContentController.saveWeeklyReport"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry/del""","""controllers.ContentController.deleteEnquiry(enquiry:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise/del""","""controllers.ContentController.deleteFranchise(franchise:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career/del""","""controllers.ContentController.deleteCareer(career:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport/del""","""controllers.ContentController.deleteWeeklyReport(weeklyReport:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:80
+private[this] lazy val controllers_ContentController_saveEnquiry45 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry"))))
+        
+
+// @LINE:81
+private[this] lazy val controllers_ContentController_saveFranchise46 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise"))))
+        
+
+// @LINE:82
+private[this] lazy val controllers_ContentController_saveWeeklyReport47 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport"))))
+        
+
+// @LINE:84
+private[this] lazy val controllers_ContentController_deleteEnquiry48 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("enquiry/del"))))
+        
+
+// @LINE:85
+private[this] lazy val controllers_ContentController_deleteFranchise49 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("franchise/del"))))
+        
+
+// @LINE:86
+private[this] lazy val controllers_ContentController_deleteCareer50 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("career/del"))))
+        
+
+// @LINE:87
+private[this] lazy val controllers_ContentController_deleteWeeklyReport51 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("weeklyreport/del"))))
+        
+
+// @LINE:92
+private[this] lazy val controllers_Assets_at52 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascript/routes.js""","""controllers.Application.jsRoutes"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """account""","""controllers.Application.user_account"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""com.feth.play.module.pa.controllers.Authenticate.logout"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""com.feth.play.module.pa.controllers.Authenticate.authenticate(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.doSignup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unverified""","""controllers.Signup.unverified"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>/denied""","""controllers.Signup.oAuthDenied(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify/$token<[^/]+>""","""controllers.Signup.verify(token:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/exists""","""controllers.Signup.exists"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset/$token<[^/]+>""","""controllers.Signup.resetPassword(token:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset""","""controllers.Signup.doResetPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.changePassword"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.doChangePassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify""","""controllers.Account.verifyEmail"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/add""","""controllers.Account.link"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.askLink"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.doLink"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.askMerge"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.doMerge"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.forgotPassword(email:String ?= "")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.doForgotPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signupadmin""","""controllers.Application.signupAdmin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """404""","""controllers.Application.notfound"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """about""","""controllers.Application.about"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.Application.contact"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry""","""controllers.ContentController.enquiry"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise""","""controllers.ContentController.franchise"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career""","""controllers.ContentController.career"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport""","""controllers.ContentController.weeklyReport"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiries""","""controllers.ContentController.enquiries"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchises""","""controllers.ContentController.franchises"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """careerrs""","""controllers.ContentController.careers"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry/$id<[^/]+>/edit""","""controllers.ContentController.enquiryEdit(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise/$id<[^/]+>/edit""","""controllers.ContentController.franchiseEdit(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career/$id<[^/]+>/edit""","""controllers.ContentController.careerEdit(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport/$id<[^/]+>/edit""","""controllers.ContentController.weeklyReportEdit(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry/$id<[^/]+>/edit""","""controllers.ContentController.enquiryUpdate(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise/$id<[^/]+>/edit""","""controllers.ContentController.franchiseUpdate(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career/$id<[^/]+>/edit""","""controllers.ContentController.careerUpdate(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport/$id<[^/]+>/edit""","""controllers.ContentController.weeklyReportUpdate(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career""","""controllers.ContentController.saveCareer"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry""","""controllers.ContentController.saveEnquiry"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise""","""controllers.ContentController.saveFranchise"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport""","""controllers.ContentController.saveWeeklyReport"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """enquiry/del""","""controllers.ContentController.deleteEnquiry(enquiry:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """franchise/del""","""controllers.ContentController.deleteFranchise(franchise:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """career/del""","""controllers.ContentController.deleteCareer(career:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """weeklyreport/del""","""controllers.ContentController.deleteWeeklyReport(weeklyReport:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -504,71 +536,135 @@ case controllers_ContentController_careers35(params) => {
         
 
 // @LINE:65
-case controllers_ContentController_saveCareer36(params) => {
+case controllers_ContentController_enquiryEdit36(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.enquiryEdit(id), HandlerDef(this, "controllers.ContentController", "enquiryEdit", Seq(classOf[String]),"GET", """""", Routes.prefix + """enquiry/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:66
+case controllers_ContentController_franchiseEdit37(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.franchiseEdit(id), HandlerDef(this, "controllers.ContentController", "franchiseEdit", Seq(classOf[String]),"GET", """""", Routes.prefix + """franchise/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:67
+case controllers_ContentController_careerEdit38(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.careerEdit(id), HandlerDef(this, "controllers.ContentController", "careerEdit", Seq(classOf[String]),"GET", """""", Routes.prefix + """career/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:68
+case controllers_ContentController_weeklyReportEdit39(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.weeklyReportEdit(id), HandlerDef(this, "controllers.ContentController", "weeklyReportEdit", Seq(classOf[String]),"GET", """""", Routes.prefix + """weeklyreport/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:70
+case controllers_ContentController_enquiryUpdate40(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.enquiryUpdate(id), HandlerDef(this, "controllers.ContentController", "enquiryUpdate", Seq(classOf[String]),"POST", """""", Routes.prefix + """enquiry/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:71
+case controllers_ContentController_franchiseUpdate41(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.franchiseUpdate(id), HandlerDef(this, "controllers.ContentController", "franchiseUpdate", Seq(classOf[String]),"POST", """""", Routes.prefix + """franchise/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:72
+case controllers_ContentController_careerUpdate42(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.careerUpdate(id), HandlerDef(this, "controllers.ContentController", "careerUpdate", Seq(classOf[String]),"POST", """""", Routes.prefix + """career/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:73
+case controllers_ContentController_weeklyReportUpdate43(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.ContentController.weeklyReportUpdate(id), HandlerDef(this, "controllers.ContentController", "weeklyReportUpdate", Seq(classOf[String]),"POST", """""", Routes.prefix + """weeklyreport/$id<[^/]+>/edit"""))
+   }
+}
+        
+
+// @LINE:79
+case controllers_ContentController_saveCareer44(params) => {
    call { 
         invokeHandler(controllers.ContentController.saveCareer, HandlerDef(this, "controllers.ContentController", "saveCareer", Nil,"POST", """""", Routes.prefix + """career"""))
    }
 }
         
 
-// @LINE:66
-case controllers_ContentController_saveEnquiry37(params) => {
+// @LINE:80
+case controllers_ContentController_saveEnquiry45(params) => {
    call { 
         invokeHandler(controllers.ContentController.saveEnquiry, HandlerDef(this, "controllers.ContentController", "saveEnquiry", Nil,"POST", """""", Routes.prefix + """enquiry"""))
    }
 }
         
 
-// @LINE:67
-case controllers_ContentController_saveFranchise38(params) => {
+// @LINE:81
+case controllers_ContentController_saveFranchise46(params) => {
    call { 
         invokeHandler(controllers.ContentController.saveFranchise, HandlerDef(this, "controllers.ContentController", "saveFranchise", Nil,"POST", """""", Routes.prefix + """franchise"""))
    }
 }
         
 
-// @LINE:68
-case controllers_ContentController_saveWeeklyReport39(params) => {
+// @LINE:82
+case controllers_ContentController_saveWeeklyReport47(params) => {
    call { 
         invokeHandler(controllers.ContentController.saveWeeklyReport, HandlerDef(this, "controllers.ContentController", "saveWeeklyReport", Nil,"POST", """""", Routes.prefix + """weeklyreport"""))
    }
 }
         
 
-// @LINE:70
-case controllers_ContentController_deleteEnquiry40(params) => {
+// @LINE:84
+case controllers_ContentController_deleteEnquiry48(params) => {
    call(params.fromQuery[String]("enquiry", None)) { (enquiry) =>
         invokeHandler(controllers.ContentController.deleteEnquiry(enquiry), HandlerDef(this, "controllers.ContentController", "deleteEnquiry", Seq(classOf[String]),"GET", """""", Routes.prefix + """enquiry/del"""))
    }
 }
         
 
-// @LINE:71
-case controllers_ContentController_deleteFranchise41(params) => {
+// @LINE:85
+case controllers_ContentController_deleteFranchise49(params) => {
    call(params.fromQuery[String]("franchise", None)) { (franchise) =>
         invokeHandler(controllers.ContentController.deleteFranchise(franchise), HandlerDef(this, "controllers.ContentController", "deleteFranchise", Seq(classOf[String]),"GET", """""", Routes.prefix + """franchise/del"""))
    }
 }
         
 
-// @LINE:72
-case controllers_ContentController_deleteCareer42(params) => {
+// @LINE:86
+case controllers_ContentController_deleteCareer50(params) => {
    call(params.fromQuery[String]("career", None)) { (career) =>
         invokeHandler(controllers.ContentController.deleteCareer(career), HandlerDef(this, "controllers.ContentController", "deleteCareer", Seq(classOf[String]),"GET", """""", Routes.prefix + """career/del"""))
    }
 }
         
 
-// @LINE:73
-case controllers_ContentController_deleteWeeklyReport43(params) => {
+// @LINE:87
+case controllers_ContentController_deleteWeeklyReport51(params) => {
    call(params.fromQuery[String]("weeklyReport", None)) { (weeklyReport) =>
         invokeHandler(controllers.ContentController.deleteWeeklyReport(weeklyReport), HandlerDef(this, "controllers.ContentController", "deleteWeeklyReport", Seq(classOf[String]),"GET", """""", Routes.prefix + """weeklyreport/del"""))
    }
 }
         
 
-// @LINE:78
-case controllers_Assets_at44(params) => {
+// @LINE:92
+case controllers_Assets_at52(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

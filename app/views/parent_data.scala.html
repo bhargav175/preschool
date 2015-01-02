@@ -1,5 +1,30 @@
-@()
+@(reports : List[WeeklyReport])
 
-@main("Parent") {
 
-}
+    @import helper._
+    @import helper.twitterBootstrap._
+
+    @import be.objectify.deadbolt.java.views.html._
+    @import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+    @main("Parent") {
+        <h1> Hi Parent! You can watch our weekly reports!</h1>
+
+        <legend>Weekly Reports</legend>
+        @for(report <- reports){
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">@report.childName</h3>
+                </div>
+                <div class="panel-body">
+                    <p>@report.percentage</p>
+
+                </div>
+            </div>
+
+        }
+
+
+
+
+    }
