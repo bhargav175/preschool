@@ -8905,3 +8905,161 @@ select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.role
 2015-01-02 10:45:47,303 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
 select t0.id as c0, t0.child_name as c1, t0.percentage as c2 from weekly_report t0
 
+2015-01-02 10:50:34,658 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:50:34,665 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:50:34,682 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0 where t0.id = 81 
+
+2015-01-02 10:50:34,684 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+update career set name='Software Dev at a Huge MNC', skills='Needs to know MS Excel, MS Powerpoint', experience='17 years', roles='Moving monitors, keyboards and also involves sitting on the bench and other stuff.' where id=81
+
+2015-01-02 10:50:34,697 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:50:34,699 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.role_name as c1 from security_role t0 where t0.role_name = 'admin' 
+
+2015-01-02 10:50:34,700 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:50:34,701 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.name as c1, t0.email as c2, t0.title as c3, t0.description as c4 from enquiry t0
+
+2015-01-02 10:50:34,702 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.name as c1, t0.location as c2, t0.request as c3, t0.about_us as c4 from franchise t0
+
+2015-01-02 10:50:34,705 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0
+
+2015-01-02 10:50:34,707 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-429 
+select t0.id as c0, t0.child_name as c1, t0.percentage as c2 from weekly_report t0
+
+2015-01-02 10:52:51,679 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-97 
+Shutting down connection pool...
+
+2015-01-02 10:52:51,680 - [DEBUG] - from com.jolbox.bonecp.PoolWatchThread in BoneCP-pool-watch-thread 
+Terminating pool watch thread
+
+2015-01-02 10:52:51,687 - [INFO] - from com.jolbox.bonecp.BoneCP in play-internal-execution-context-97 
+Connection pool has been shutdown.
+
+2015-01-02 10:52:51,687 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-97 
+Connection pool has been shut down
+
+2015-01-02 10:52:52,286 - [DEBUG] - from com.jolbox.bonecp.BoneCPDataSource in play-internal-execution-context-97 
+JDBC URL = jdbc:postgresql://localhost/school, Username = postgres, partitions = 1, max (per partition) = 30, min (per partition) = 5, idle max age = 10 min, idle test period = 1 min, strategy = DEFAULT
+
+2015-01-02 10:52:53,690 - [INFO] - from play in play-internal-execution-context-97 
+database [default] connected at jdbc:postgresql://localhost/school
+
+2015-01-02 10:52:54,146 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-97 
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%'
+
+2015-01-02 10:52:54,150 - [DEBUG] - from com.jolbox.bonecp.StatementHandle in play-internal-execution-context-97 
+
+            select id, hash, apply_script, revert_script from play_evolutions order by id
+        
+
+2015-01-02 10:52:54,171 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-internal-execution-context-97 
+select count(*) from security_role t0
+
+2015-01-02 10:52:54,175 - [WARN] - from application in play-internal-execution-context-97 
+A user service was already registered - replacing the old one, however this might hint to a configuration problem if this is a production environment.
+
+2015-01-02 10:52:54,176 - [INFO] - from play in play-internal-execution-context-97 
+Application started (Dev)
+
+2015-01-02 10:52:54,199 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:52:54,214 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:52:54,251 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0 where t0.id = 81 
+
+2015-01-02 10:52:54,257 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+update career set name='Software Dev at a Huge MNC', skills='Needs to know MS Excel, MS Powerpoint', experience='17 years', roles='Moving monitors, keyboards and also involves sitting on the bench and other stuff.' where id=81
+
+2015-01-02 10:52:55,105 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:52:55,113 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.role_name as c1 from security_role t0 where t0.role_name = 'admin' 
+
+2015-01-02 10:52:55,115 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:52:55,118 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.email as c2, t0.title as c3, t0.description as c4 from enquiry t0
+
+2015-01-02 10:52:55,120 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.location as c2, t0.request as c3, t0.about_us as c4 from franchise t0
+
+2015-01-02 10:52:55,123 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0
+
+2015-01-02 10:52:55,125 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.child_name as c1, t0.percentage as c2 from weekly_report t0
+
+2015-01-02 10:52:55,163 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:53:08,968 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:53:08,974 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:53:08,985 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0 where t0.id = 82 
+
+2015-01-02 10:53:08,993 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:53:09,000 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.role_name as c1 from security_role t0 where t0.role_name = 'admin' 
+
+2015-01-02 10:53:09,002 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:53:13,537 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-448 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:53:13,551 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-448 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:53:13,563 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-448 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0 where t0.id = 82 
+
+2015-01-02 10:53:13,568 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-448 
+update career set name='Hardware Developer at a Really Huge MNC', skills='Needs to be okay with not being noticed because we are not going to notice u', experience='29 years', roles='Stay indoors 11 hours a day. And do nothing' where id=82
+
+2015-01-02 10:53:13,635 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+
+2015-01-02 10:53:13,638 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.role_name as c1 from security_role t0 where t0.role_name = 'admin' 
+
+2015-01-02 10:53:13,641 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t1.id as c1, t1.role_name as c2 from users t0 left outer join users_security_role t1z_ on t1z_.users_id = t0.id  left outer join security_role t1 on t1.id = t1z_.security_role_id  where t0.id = 1   order by t0.id
+
+2015-01-02 10:53:13,644 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.email as c2, t0.title as c3, t0.description as c4 from enquiry t0
+
+2015-01-02 10:53:13,648 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.location as c2, t0.request as c3, t0.about_us as c4 from franchise t0
+
+2015-01-02 10:53:13,650 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.name as c1, t0.skills as c2, t0.experience as c3, t0.roles as c4 from career t0
+
+2015-01-02 10:53:13,652 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select t0.id as c0, t0.child_name as c1, t0.percentage as c2 from weekly_report t0
+
+2015-01-02 10:53:13,655 - [DEBUG] - from com.jolbox.bonecp.PreparedStatementHandle in play-akka.actor.default-dispatcher-437 
+select distinct t0.id as c0, t0.email as c1, t0.name as c2, t0.first_name as c3, t0.last_name as c4, t0.last_login as c5, t0.active as c6, t0.email_validated as c7, t0.teacher as c8 from users t0 join linked_account u1 on u1.user_id = t0.id  where t0.active = true  and t0.email = 'admin@admin.com'  and u1.provider_key = 'password' 
+

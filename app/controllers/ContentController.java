@@ -84,9 +84,9 @@ public class ContentController extends Controller {
         Career career = Career.findById(cId);
         if(career!=null &&career.id!=null){
             career.delete();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
     }
@@ -97,9 +97,9 @@ public class ContentController extends Controller {
         WeeklyReport weeklyReport = WeeklyReport.findById(wId);
         if(weeklyReport!=null &&weeklyReport.id!=null){
             weeklyReport.delete();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -113,9 +113,9 @@ public class ContentController extends Controller {
         Enquiry enquiry = Enquiry.findById(eId);
         if(enquiry!=null &&enquiry.id!=null){
             enquiry.delete();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -128,9 +128,9 @@ public class ContentController extends Controller {
         Franchise franchise = Franchise.findById(fId);
         if(franchise!=null &&franchise.id!=null){
             franchise.delete();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -152,7 +152,7 @@ public class ContentController extends Controller {
             return ok(edit_career_template.render(careerForm2,career));
 
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
     }
@@ -169,7 +169,7 @@ public class ContentController extends Controller {
             return ok(edit_weekly_report_template.render(weeklyReportForm1,weeklyReport));
 
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -188,7 +188,7 @@ public class ContentController extends Controller {
             return ok(edit_enquiry_template.render(enquiryForm1,enquiry));
 
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -207,7 +207,7 @@ public class ContentController extends Controller {
             return ok(edit_franchise_template.render(franchiseForm1,franchise));
 
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
     }
@@ -224,9 +224,9 @@ public class ContentController extends Controller {
         if(career!=null &&cId!=null ){
             career1.id = career.id;
             career1.update();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
     }
@@ -240,9 +240,9 @@ public class ContentController extends Controller {
         if(weeklyReport1!=null &&wId!=null ){
             weeklyReport1.id = weeklyReport.id;
             weeklyReport1.update();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -257,9 +257,9 @@ public class ContentController extends Controller {
         if(enquiry!=null &&eId!=null ){
             enquiry1.id = enquiry.id;
             enquiry1.update();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
 
 
@@ -274,9 +274,9 @@ public class ContentController extends Controller {
         if(franchise!=null &&fId!=null ){
             franchise1.id = franchise.id;
             franchise1.update();
-            return Application.index();
+            return redirect("/");
         }else{
-            return Application.index();
+            return redirect("/");
         }
     }
 
