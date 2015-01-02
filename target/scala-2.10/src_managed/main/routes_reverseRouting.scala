@@ -1,6 +1,6 @@
 // @SOURCE:W:/Pre School/conf/routes
-// @HASH:634b9baf9a30150472c1d7c13d439ef8ec3e76bf
-// @DATE:Fri Jan 02 04:02:07 IST 2015
+// @HASH:d715bd28b9922e05b8e914bf56315dfd1eb15d7e
+// @DATE:Fri Jan 02 04:46:21 IST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -39,7 +39,15 @@ def authenticate(provider:String): Call = {
 }
                   
 
-// @LINE:78
+// @LINE:92
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -84,11 +92,11 @@ def authenticate(provider:String): Call = {
 // @LINE:8
 package controllers {
 
-// @LINE:78
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:78
+// @LINE:92
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -97,6 +105,14 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -115,19 +131,19 @@ def at(file:String): Call = {
 class ReverseContentController {
     
 
-// @LINE:73
+// @LINE:87
 def deleteWeeklyReport(weeklyReport:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "weeklyreport/del" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("weeklyReport", weeklyReport)))))
 }
                                                 
 
-// @LINE:65
+// @LINE:79
 def saveCareer(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "career")
 }
                                                 
 
-// @LINE:71
+// @LINE:85
 def deleteFranchise(franchise:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "franchise/del" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("franchise", franchise)))))
 }
@@ -139,7 +155,7 @@ def careers(): Call = {
 }
                                                 
 
-// @LINE:72
+// @LINE:86
 def deleteCareer(career:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "career/del" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("career", career)))))
 }
@@ -151,15 +167,27 @@ def career(): Call = {
 }
                                                 
 
-// @LINE:68
+// @LINE:82
 def saveWeeklyReport(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "weeklyreport")
 }
                                                 
 
-// @LINE:66
+// @LINE:80
 def saveEnquiry(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "enquiry")
+}
+                                                
+
+// @LINE:68
+def weeklyReportEdit(id:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "weeklyreport/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:67
+def careerEdit(id:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "career/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
 }
                                                 
 
@@ -193,13 +221,49 @@ def franchise(): Call = {
 }
                                                 
 
-// @LINE:67
+// @LINE:72
+def careerUpdate(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "career/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:65
+def enquiryEdit(id:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "enquiry/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:73
+def weeklyReportUpdate(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "weeklyreport/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:81
 def saveFranchise(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "franchise")
 }
                                                 
 
+// @LINE:66
+def franchiseEdit(id:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "franchise/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
 // @LINE:70
+def enquiryUpdate(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "enquiry/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:71
+def franchiseUpdate(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "franchise/" + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/edit")
+}
+                                                
+
+// @LINE:84
 def deleteEnquiry(enquiry:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "enquiry/del" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("enquiry", enquiry)))))
 }
@@ -454,7 +518,15 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
-// @LINE:78
+// @LINE:92
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -499,11 +571,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:8
 package controllers.javascript {
 
-// @LINE:78
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:78
+// @LINE:92
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -517,6 +589,14 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -535,7 +615,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseContentController {
     
 
-// @LINE:73
+// @LINE:87
 def deleteWeeklyReport : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.deleteWeeklyReport",
    """
@@ -546,7 +626,7 @@ def deleteWeeklyReport : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:65
+// @LINE:79
 def saveCareer : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.saveCareer",
    """
@@ -557,7 +637,7 @@ def saveCareer : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:71
+// @LINE:85
 def deleteFranchise : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.deleteFranchise",
    """
@@ -579,7 +659,7 @@ def careers : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:72
+// @LINE:86
 def deleteCareer : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.deleteCareer",
    """
@@ -601,7 +681,7 @@ def career : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:68
+// @LINE:82
 def saveWeeklyReport : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.saveWeeklyReport",
    """
@@ -612,12 +692,34 @@ def saveWeeklyReport : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:66
+// @LINE:80
 def saveEnquiry : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.saveEnquiry",
    """
       function() {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "enquiry"})
+      }
+   """
+)
+                        
+
+// @LINE:68
+def weeklyReportEdit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.weeklyReportEdit",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "weeklyreport/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:67
+def careerEdit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.careerEdit",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "career/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
       }
    """
 )
@@ -678,7 +780,40 @@ def franchise : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:67
+// @LINE:72
+def careerUpdate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.careerUpdate",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "career/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:65
+def enquiryEdit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.enquiryEdit",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "enquiry/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:73
+def weeklyReportUpdate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.weeklyReportUpdate",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "weeklyreport/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:81
 def saveFranchise : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.saveFranchise",
    """
@@ -689,7 +824,40 @@ def saveFranchise : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:66
+def franchiseEdit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.franchiseEdit",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "franchise/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
 // @LINE:70
+def enquiryUpdate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.enquiryUpdate",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "enquiry/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:71
+def franchiseUpdate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.franchiseUpdate",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "franchise/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id)) + "/edit"})
+      }
+   """
+)
+                        
+
+// @LINE:84
 def deleteEnquiry : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.ContentController.deleteEnquiry",
    """
@@ -1075,7 +1243,15 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
-// @LINE:78
+// @LINE:92
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -1121,11 +1297,11 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 package controllers.ref {
 
 
-// @LINE:78
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:78
+// @LINE:92
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -1134,6 +1310,14 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:87
+// @LINE:86
+// @LINE:85
+// @LINE:84
+// @LINE:82
+// @LINE:81
+// @LINE:80
+// @LINE:79
 // @LINE:73
 // @LINE:72
 // @LINE:71
@@ -1152,19 +1336,19 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 class ReverseContentController {
     
 
-// @LINE:73
+// @LINE:87
 def deleteWeeklyReport(weeklyReport:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.deleteWeeklyReport(weeklyReport), HandlerDef(this, "controllers.ContentController", "deleteWeeklyReport", Seq(classOf[String]), "GET", """""", _prefix + """weeklyreport/del""")
 )
                       
 
-// @LINE:65
+// @LINE:79
 def saveCareer(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.saveCareer(), HandlerDef(this, "controllers.ContentController", "saveCareer", Seq(), "POST", """""", _prefix + """career""")
 )
                       
 
-// @LINE:71
+// @LINE:85
 def deleteFranchise(franchise:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.deleteFranchise(franchise), HandlerDef(this, "controllers.ContentController", "deleteFranchise", Seq(classOf[String]), "GET", """""", _prefix + """franchise/del""")
 )
@@ -1176,7 +1360,7 @@ def careers(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:72
+// @LINE:86
 def deleteCareer(career:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.deleteCareer(career), HandlerDef(this, "controllers.ContentController", "deleteCareer", Seq(classOf[String]), "GET", """""", _prefix + """career/del""")
 )
@@ -1188,15 +1372,27 @@ def career(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:68
+// @LINE:82
 def saveWeeklyReport(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.saveWeeklyReport(), HandlerDef(this, "controllers.ContentController", "saveWeeklyReport", Seq(), "POST", """""", _prefix + """weeklyreport""")
 )
                       
 
-// @LINE:66
+// @LINE:80
 def saveEnquiry(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.saveEnquiry(), HandlerDef(this, "controllers.ContentController", "saveEnquiry", Seq(), "POST", """""", _prefix + """enquiry""")
+)
+                      
+
+// @LINE:68
+def weeklyReportEdit(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.weeklyReportEdit(id), HandlerDef(this, "controllers.ContentController", "weeklyReportEdit", Seq(classOf[String]), "GET", """""", _prefix + """weeklyreport/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:67
+def careerEdit(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.careerEdit(id), HandlerDef(this, "controllers.ContentController", "careerEdit", Seq(classOf[String]), "GET", """""", _prefix + """career/$id<[^/]+>/edit""")
 )
                       
 
@@ -1230,13 +1426,49 @@ def franchise(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:67
+// @LINE:72
+def careerUpdate(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.careerUpdate(id), HandlerDef(this, "controllers.ContentController", "careerUpdate", Seq(classOf[String]), "POST", """""", _prefix + """career/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:65
+def enquiryEdit(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.enquiryEdit(id), HandlerDef(this, "controllers.ContentController", "enquiryEdit", Seq(classOf[String]), "GET", """""", _prefix + """enquiry/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:73
+def weeklyReportUpdate(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.weeklyReportUpdate(id), HandlerDef(this, "controllers.ContentController", "weeklyReportUpdate", Seq(classOf[String]), "POST", """""", _prefix + """weeklyreport/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:81
 def saveFranchise(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.saveFranchise(), HandlerDef(this, "controllers.ContentController", "saveFranchise", Seq(), "POST", """""", _prefix + """franchise""")
 )
                       
 
+// @LINE:66
+def franchiseEdit(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.franchiseEdit(id), HandlerDef(this, "controllers.ContentController", "franchiseEdit", Seq(classOf[String]), "GET", """""", _prefix + """franchise/$id<[^/]+>/edit""")
+)
+                      
+
 // @LINE:70
+def enquiryUpdate(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.enquiryUpdate(id), HandlerDef(this, "controllers.ContentController", "enquiryUpdate", Seq(classOf[String]), "POST", """""", _prefix + """enquiry/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:71
+def franchiseUpdate(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.franchiseUpdate(id), HandlerDef(this, "controllers.ContentController", "franchiseUpdate", Seq(classOf[String]), "POST", """""", _prefix + """franchise/$id<[^/]+>/edit""")
+)
+                      
+
+// @LINE:84
 def deleteEnquiry(enquiry:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.deleteEnquiry(enquiry), HandlerDef(this, "controllers.ContentController", "deleteEnquiry", Seq(classOf[String]), "GET", """""", _prefix + """enquiry/del""")
 )

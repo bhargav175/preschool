@@ -1,0 +1,20 @@
+@(playForm: Form[Franchise],franchise: Franchise)
+@import helper._
+@import helper.twitterBootstrap._
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+@main("Franchise") {
+
+
+		@helper.form(action = routes.ContentController.franchiseUpdate(franchise.id.toString()), 'class -> "form") {
+			@helper.inputText(playForm("name"), 'id -> "name", 'class -> "form-control", 'required -> "required")
+			@helper.inputText(playForm("location"), 'id -> "skills", 'class -> "form-control", 'required -> "required")
+			@helper.textarea(playForm("request"), 'id -> "experience", 'class -> "form-control", 'required -> "required")
+			@helper.textarea(playForm("aboutUs"), 'id -> "roles", 'class -> "form-control", 'required -> "required")
+			<button type="submit" class="btn btn-success">Go</button>
+		}
+
+
+}
