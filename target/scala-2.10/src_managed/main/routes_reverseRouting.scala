@@ -1,6 +1,6 @@
 // @SOURCE:W:/Pre School/conf/routes
-// @HASH:d715bd28b9922e05b8e914bf56315dfd1eb15d7e
-// @DATE:Fri Jan 02 04:46:21 IST 2015
+// @HASH:715f64bdb7f9d7af012c97db3bcae67bc1770aa8
+// @DATE:Sun Jan 04 12:26:39 IST 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -39,7 +39,8 @@ def authenticate(provider:String): Call = {
 }
                   
 
-// @LINE:92
+// @LINE:94
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -92,11 +93,11 @@ def authenticate(provider:String): Call = {
 // @LINE:8
 package controllers {
 
-// @LINE:92
+// @LINE:94
 class ReverseAssets {
     
 
-// @LINE:92
+// @LINE:94
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -105,6 +106,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -266,6 +268,12 @@ def franchiseUpdate(id:String): Call = {
 // @LINE:84
 def deleteEnquiry(enquiry:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "enquiry/del" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("enquiry", enquiry)))))
+}
+                                                
+
+// @LINE:91
+def gallery(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "gallery")
 }
                                                 
     
@@ -518,7 +526,8 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
-// @LINE:92
+// @LINE:94
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -571,11 +580,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:8
 package controllers.javascript {
 
-// @LINE:92
+// @LINE:94
 class ReverseAssets {
     
 
-// @LINE:92
+// @LINE:94
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -589,6 +598,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -863,6 +873,17 @@ def deleteEnquiry : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(enquiry) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "enquiry/del" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("enquiry", enquiry)])})
+      }
+   """
+)
+                        
+
+// @LINE:91
+def gallery : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.ContentController.gallery",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "gallery"})
       }
    """
 )
@@ -1243,7 +1264,8 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
-// @LINE:92
+// @LINE:94
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -1297,11 +1319,11 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 package controllers.ref {
 
 
-// @LINE:92
+// @LINE:94
 class ReverseAssets {
     
 
-// @LINE:92
+// @LINE:94
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -1310,6 +1332,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:91
 // @LINE:87
 // @LINE:86
 // @LINE:85
@@ -1471,6 +1494,12 @@ def franchiseUpdate(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.Ha
 // @LINE:84
 def deleteEnquiry(enquiry:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.ContentController.deleteEnquiry(enquiry), HandlerDef(this, "controllers.ContentController", "deleteEnquiry", Seq(classOf[String]), "GET", """""", _prefix + """enquiry/del""")
+)
+                      
+
+// @LINE:91
+def gallery(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.ContentController.gallery(), HandlerDef(this, "controllers.ContentController", "gallery", Seq(), "GET", """New Routes""", _prefix + """gallery""")
 )
                       
     

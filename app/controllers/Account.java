@@ -82,7 +82,7 @@ public class Account extends Controller {
 		return ok(link.render());
 	}
 
-	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE),@Group(SecurityRole.USER_ROLE)})
 	public static Result verifyEmail() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final User user = Application.getLocalUser(session());
@@ -104,7 +104,7 @@ public class Account extends Controller {
 		return redirect(routes.Application.user_account());
 	}
 
-	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE),@Group(SecurityRole.USER_ROLE)})
 	public static Result changePassword() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final User u = Application.getLocalUser(session());
@@ -116,7 +116,7 @@ public class Account extends Controller {
 		}
 	}
 
-	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
+	@Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE),@Group(SecurityRole.USER_ROLE)})
 	public static Result doChangePassword() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final Form<PasswordChange> filledForm = PASSWORD_CHANGE_FORM

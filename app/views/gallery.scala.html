@@ -1,0 +1,39 @@
+@()
+
+@main("Welcome to Play") {
+
+	<style>
+		.gallery .thumbnail{
+			width:100%;
+			margin:auto;
+			height:180px;
+		}
+		.gallery .thumbnail img{
+		width:100%;
+		margin:auto;
+		height:100%;
+		max-width:240px;
+
+		}
+
+	</style>
+
+	<div class="gallery">
+	<div class="col-xs-6 col-md-4 col-lg-3 col-sm-6">
+		<a href="#" class="thumbnail">
+			<img src="@routes.Assets.at("images/kids.jpg")" alt="Kids 1">
+		</a>
+	</div>
+	<div class="col-xs-6 col-md-4 col-lg-3 col-sm-6">
+		<a href="#" class="thumbnail">
+			<img src="@routes.Assets.at("images/kids-2.jpg")" alt="Kids 2">
+		</a>
+	</div>
+	<div class="col-xs-6 col-md-4 col-lg-3 col-sm-6">
+		<a href="#" class="thumbnail">
+			<img src="@routes.Assets.at("images/kids-3.jpg")" alt="Kids 3">
+		</a>
+	</div>
+	</div>
+
+}

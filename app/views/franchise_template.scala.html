@@ -8,16 +8,22 @@
 @main("Franchise") {
 
 	@for(franchise <- franchises) {
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">@franchise.name</h3>
-			</div>
-			<div class="panel-body">
+		<div class="jumbotron">
+			<h1>@franchise.name</h1>
+
 				<p>@franchise.location</p>
 				<p>@franchise.request</p>
 				<p>@franchise.aboutUs</p>
 
-			</div>
+			@subjectPresentOr() {
+				@defining(Application.getLocalUser(session())) { user =>
+					@if(user.isAdmin()){
+						<p><a class="danger" href="@routes.ContentController.franchise()">Delete</a></p>
+					}
+				}
+			}{
+
+			}
 		</div>
 
 	}

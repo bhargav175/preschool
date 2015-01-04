@@ -99,7 +99,7 @@ public class Global extends GlobalSettings {
 	private void initialData() {
 		if (SecurityRole.find.findRowCount() == 0) {
 			for (final String roleName : Arrays
-					.asList(SecurityRole.ADMIN_ROLE, SecurityRole.TEACHER_ROLE, SecurityRole.PARENT_ROLE)) {
+					.asList(SecurityRole.ADMIN_ROLE, SecurityRole.TEACHER_ROLE, SecurityRole.PARENT_ROLE,SecurityRole.USER_ROLE)) {
 				final SecurityRole role = new SecurityRole();
 				role.roleName = roleName;
 				role.save();

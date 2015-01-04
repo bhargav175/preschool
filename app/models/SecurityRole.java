@@ -31,6 +31,7 @@ public class SecurityRole extends Model implements Role {
 	public static final String TEACHER_ROLE = "teacher";
 	public static final String ADMIN_ROLE = "admin";
 	public static final String PARENT_ROLE = "parent";
+	public static final String USER_ROLE = "user";
 
 	/**
 	 * 

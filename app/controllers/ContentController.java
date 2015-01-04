@@ -223,7 +223,7 @@ public class ContentController extends Controller {
         Career career = Career.findById(cId);
         if(career!=null &&cId!=null ){
             career1.id = career.id;
-            career1.update();
+            career1.update(cId);
             return redirect("/");
         }else{
             return redirect("/");
@@ -239,7 +239,7 @@ public class ContentController extends Controller {
         WeeklyReport weeklyReport1 = WeeklyReport.findById(wId);
         if(weeklyReport1!=null &&wId!=null ){
             weeklyReport1.id = weeklyReport.id;
-            weeklyReport1.update();
+            weeklyReport.update(wId);
             return redirect("/");
         }else{
             return redirect("/");
@@ -256,7 +256,7 @@ public class ContentController extends Controller {
         Enquiry enquiry1 = Enquiry.findById(eId);
         if(enquiry!=null &&eId!=null ){
             enquiry1.id = enquiry.id;
-            enquiry1.update();
+            enquiry.update(eId);
             return redirect("/");
         }else{
             return redirect("/");
@@ -273,7 +273,7 @@ public class ContentController extends Controller {
         Franchise franchise1 = Franchise.findById(fId);
         if(franchise!=null &&fId!=null ){
             franchise1.id = franchise.id;
-            franchise1.update();
+            franchise.update(fId);
             return redirect("/");
         }else{
             return redirect("/");
@@ -294,8 +294,7 @@ public class ContentController extends Controller {
         return ok(franchise_template.render(franchiseForm,franchiseList));
     }
 
-    @Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
-    public static Result weeklyReport() {
+    @Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE),@Group(SecurityRole.USER_ROLE)})    public static Result weeklyReport() {
         List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
         return ok(weekly_report_template.render(weeklyReportForm,weeklyReports));
     }
@@ -310,5 +309,9 @@ public class ContentController extends Controller {
 
     public static Result enquiries() {
         return play.mvc.Results.TODO;
+    }
+
+    public static Result gallery() {
+        return ok(gallery.render());
     }
 }

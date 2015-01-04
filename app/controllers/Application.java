@@ -52,9 +52,13 @@ public class Application extends Controller {
             }else if(localUser.isTeacher()){
                 List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
                 return ok(teacher_data.render(weeklyReports));
-            }else {
+            }else if(localUser.isParent()){
                 List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
                 return ok(parent_data.render(weeklyReports));
+            }
+            else {
+                List<WeeklyReport> weeklyReports = WeeklyReport.findAll();
+                return ok(user_data.render(weeklyReports));
             }
         }else{
             return ok(landing.render());
@@ -81,7 +85,7 @@ public class Application extends Controller {
         final User localUser = User.findByAuthUserIdentity(currentAuthUser);
         return localUser;
     }
-    @Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE)})
+    @Restrict({@Group(SecurityRole.TEACHER_ROLE),@Group(SecurityRole.PARENT_ROLE),@Group(SecurityRole.ADMIN_ROLE),@Group(SecurityRole.USER_ROLE)})
     public static Result user_account() {
         final User localUser = getLocalUser(session());
         return ok(user_account.render(localUser));

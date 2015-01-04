@@ -8,16 +8,23 @@
 @main("Careers") {
 
 	@for(career <- careers){
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">@career.name</h3>
-			</div>
-			<div class="panel-body">
+		<div class="jumbotron">
+			<h1>@career.name</h1>
 				<p>@career.skills</p>
 				<p>@career.experience</p>
 				<p>@career.roles</p>
+				@subjectPresentOr() {
+					@defining(Application.getLocalUser(session())) { user =>
+						@if(user.isAdmin()){
+							<p><a class="danger"  href="@routes.ContentController.deleteCareer(career.id.toString())">Delete</a></p>
+							<p><a class="danger" href="@routes.ContentController.careerEdit(career.id.toString())">Edit</a></p>
+						}
+					}
+				}{
 
-			</div>
+				}
+
+
 		</div>
 
 	}

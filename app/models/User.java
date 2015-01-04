@@ -150,7 +150,7 @@ public class User extends Model implements Subject {
         if(controllers.Application.IS_SUPER_ADMIN ==false){
 
             user.roles = Collections.singletonList(SecurityRole
-                    .findByRoleName(SecurityRole.PARENT_ROLE));
+                    .findByRoleName(SecurityRole.USER_ROLE));
         }
         else{
             user.roles = Collections.singletonList(SecurityRole
@@ -293,4 +293,13 @@ public class User extends Model implements Subject {
 		}else{
 			return false;
 		}	}
+
+	public boolean isParent() {
+		List<SecurityRole> securityRoles = this.roles;
+		if(securityRoles.contains(SecurityRole.findByRoleName(SecurityRole.PARENT_ROLE))){
+			return true;
+		}else {
+			return false;
+		}
+	}
 }

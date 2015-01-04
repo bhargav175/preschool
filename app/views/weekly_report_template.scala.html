@@ -8,14 +8,20 @@
 @main("Weekly Report") {
 	@subjectPresentOr() {
 		@for(report <- reports) {
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h3 class="panel-title">@report.childName</h3>
-				</div>
-				<div class="panel-body">
-					<p>@report.percentage.toString</p>
+			<div class="jumbotron">
+				<h1>@report.childName</h1>
+				<p>@report.percentage.toString</p>
+				@subjectPresentOr() {
+					@defining(Application.getLocalUser(session())) { user =>
+						@if(user.isAdmin() || user.isTeacher()){
+							<p><a class="danger" href="@routes.ContentController.deleteWeeklyReport(report.id.toString())">Delete</a></p>
+							<p><a class="danger" href="@routes.ContentController.weeklyReportEdit(report.id.toString())">Edit</a></p>
 
-				</div>
+						}
+					}
+				}{
+
+				}
 			</div>
 
 		}

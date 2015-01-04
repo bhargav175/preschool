@@ -8,16 +8,25 @@
 @main("Enquiry") {
 
 	@for(enquiry <- enquiries){
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">@enquiry.name</h3>
-			</div>
-			<div class="panel-body">
+		<div class="jumbotron">
+			<h1>@enquiry.name</h1>
+
 				<p>@enquiry.title</p>
 				<p>@enquiry.description</p>
 				<p>@enquiry.email</p>
 
-			</div>
+			@subjectPresentOr() {
+				@defining(Application.getLocalUser(session())) { user =>
+					@if(user.isAdmin()){
+						<p><a class="danger"  href="@routes.ContentController.deleteEnquiry(enquiry.id.toString())">Delete</a></p>
+					}
+				}
+			}{
+
+			}
+
+
+
 		</div>
 
 	}
